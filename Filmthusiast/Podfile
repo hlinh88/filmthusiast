@@ -9,6 +9,7 @@ target 'Filmthusiast' do
   pod 'Kingfisher'
   pod 'Reusable'
   pod 'ObjectMapper'
+  pod 'SkeletonView'
 end
 
 post_install do |installer|

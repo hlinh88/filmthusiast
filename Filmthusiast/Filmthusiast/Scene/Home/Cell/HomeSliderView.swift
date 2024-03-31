@@ -14,8 +14,9 @@ protocol HomeSliderViewOutput: AnyObject {
 
 class HomeSliderView: BaseCVCell {
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
     weak var output: HomeSliderViewOutput?
+    var isLoadingData: Bool = true
 
     var movies: [Movie] = [] {
         didSet {
@@ -40,8 +41,9 @@ class HomeSliderView: BaseCVCell {
 
     }
 
-    func configCell(with movies: [Movie]) {
+    func configCell(with movies: [Movie], isLoadingData: Bool = false) {
         self.movies = movies
+        self.isLoadingData = isLoadingData
     }
 
 }
@@ -59,6 +61,11 @@ extension HomeSliderView: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeMovieCell = collectionView.dequeueReusableCell(for: indexPath, cellType: HomeMovieCell.self)
+        if isLoadingData {
+            cell.showSkeleton()
+        } else {
+            cell.hideSkeleton()
+        }
         cell.configCell(with: movies[indexPath.row])
 
         return cell

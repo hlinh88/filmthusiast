@@ -37,6 +37,9 @@
                 <constraint firstAttribute="trailing" secondItem="r49-Re-7qd" secondAttribute="trailing" id="y7H-l3-Csu"/>
             </constraints>
             <size key="customSize" width="536" height="141"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="collectionView" destination="r49-Re-7qd" id="KVF-m2-iAB"/>
             </connections>

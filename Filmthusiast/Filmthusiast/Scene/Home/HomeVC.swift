@@ -26,10 +26,14 @@ class HomeVC: UIViewController {
 
     let sections: [Section] = [.NowPlaying, .Popular, .TopRated, .Upcoming]
 
+    private var isLoadingData: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMovies()
         setupUI()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            self?.getMovies()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -59,10 +63,6 @@ class HomeVC: UIViewController {
 
             let urlString = "https://api.themoviedb.org/3/movie/\(category.rawValue)?language=en-US&page=1"
             APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<MovieList, APIError>) in
-                defer {
-                    group.leave()
-                }
-
                 switch result {
                 case .success(let movieList):
                     switch category {
@@ -79,13 +79,28 @@ class HomeVC: UIViewController {
                 case .failure(let error):
                     self?.showAlert(title: "Error", message: error.localizedDescription, btnString: "OK")
                 }
+
+                group.leave()
             }
         }
 
         group.notify(queue: .main) { [weak self] in
+            self?.isLoadingData = false
             self?.collectionView.reloadData()
         }
 
+    }
+
+    private func generateSkeletonMovies() -> [Movie] {
+        var movies: [Movie] = []
+        let fakeMovieItem = 5
+
+        for _ in 0..<fakeMovieItem {
+            let emptyMovie = Movie(id: 0, backdrop: "", title: "", overview: "", poster: "", releaseDate: nil, status: nil)
+            movies.append(emptyMovie)
+        }
+
+        return movies
     }
 
 }
@@ -139,15 +154,19 @@ extension HomeVC: UICollectionViewDataSource,
         let cell: HomeSliderView = collectionView.dequeueReusableCell(for: indexPath, cellType: HomeSliderView.self)
         cell.output = self
 
-        switch sections[indexPath.section] {
-        case .NowPlaying:
-            cell.configCell(with: nowPlayingMovies)
-        case .Popular:
-            cell.configCell(with: popularMovies)
-        case .TopRated:
-            cell.configCell(with: topRatedMovies)
-        case .Upcoming:
-            cell.configCell(with: upcomingMovies)
+        if isLoadingData {
+            cell.configCell(with: generateSkeletonMovies(), isLoadingData: true)
+        } else {
+            switch sections[indexPath.section] {
+            case .NowPlaying:
+                cell.configCell(with: nowPlayingMovies)
+            case .Popular:
+                cell.configCell(with: popularMovies)
+            case .TopRated:
+                cell.configCell(with: topRatedMovies)
+            case .Upcoming:
+                cell.configCell(with: upcomingMovies)
+            }
         }
 
         return cell

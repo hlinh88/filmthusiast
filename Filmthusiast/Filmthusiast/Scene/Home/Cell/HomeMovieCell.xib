@@ -19,19 +19,37 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ztF-3l-xnk">
                         <rect key="frame" x="0.0" y="0.0" width="286" height="547"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbu-XH-azo">
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="547"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Vbu-XH-azo" firstAttribute="trailing" secondItem="ztF-3l-xnk" secondAttribute="trailing" id="4KR-CH-zrw"/>
+                <constraint firstItem="Vbu-XH-azo" firstAttribute="leading" secondItem="ztF-3l-xnk" secondAttribute="leading" id="8qc-rH-fxt"/>
                 <constraint firstAttribute="trailing" secondItem="ztF-3l-xnk" secondAttribute="trailing" id="IgG-5X-uDe"/>
                 <constraint firstAttribute="bottom" secondItem="ztF-3l-xnk" secondAttribute="bottom" id="Ost-zW-0Tq"/>
                 <constraint firstItem="ztF-3l-xnk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bZb-b5-8xK"/>
                 <constraint firstItem="ztF-3l-xnk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cJT-XS-lX1"/>
+                <constraint firstItem="Vbu-XH-azo" firstAttribute="bottom" secondItem="ztF-3l-xnk" secondAttribute="bottom" id="rEW-kQ-iPE"/>
+                <constraint firstItem="Vbu-XH-azo" firstAttribute="top" secondItem="ztF-3l-xnk" secondAttribute="top" id="wNc-g1-1gr"/>
             </constraints>
             <size key="customSize" width="286" height="547"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="ivBanner" destination="ztF-3l-xnk" id="FR7-lf-OGU"/>
+                <outlet property="vSkeleton" destination="Vbu-XH-azo" id="tz5-z9-lp7"/>
             </connections>
             <point key="canvasLocation" x="261.06870229007632" y="194.01408450704227"/>
         </collectionViewCell>

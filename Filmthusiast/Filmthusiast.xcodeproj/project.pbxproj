@@ -28,6 +28,7 @@
 		5E3064B92BB961AA00AA5BF9 /* CheckInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3064B72BB961AA00AA5BF9 /* CheckInVC.xib */; };
 		5E3064BD2BB965B600AA5BF9 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3064BB2BB965B600AA5BF9 /* MovieDetailVC.swift */; };
 		5E3064BE2BB965B600AA5BF9 /* MovieDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3064BC2BB965B600AA5BF9 /* MovieDetailVC.xib */; };
+		5E4FCC752BB98A3000E15B6D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */; };
 		5E86AA502BB915E8002FFEAE /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA4F2BB915E8002FFEAE /* BaseCVCell.swift */; };
 		5E86AA5A2BB91B36002FFEAE /* BebasNeue-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA552BB91B36002FFEAE /* BebasNeue-Book.otf */; };
 		5E86AA5B2BB91B36002FFEAE /* BebasNeue-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA562BB91B36002FFEAE /* BebasNeue-Light.otf */; };
@@ -66,6 +67,7 @@
 		5E3064B72BB961AA00AA5BF9 /* CheckInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInVC.xib; sourceTree = "<group>"; };
 		5E3064BB2BB965B600AA5BF9 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		5E3064BC2BB965B600AA5BF9 /* MovieDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailVC.xib; sourceTree = "<group>"; };
+		5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5E86AA4F2BB915E8002FFEAE /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
 		5E86AA552BB91B36002FFEAE /* BebasNeue-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Book.otf"; sourceTree = "<group>"; };
 		5E86AA562BB91B36002FFEAE /* BebasNeue-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Light.otf"; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		5E1F529C2BB0855200D116B4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5E4FCC732BB98A2700E15B6D /* Splash */,
 				5E1F529D2BB0855800D116B4 /* Font */,
 			);
 			path = Resources;
@@ -261,6 +264,14 @@
 				5E3064BC2BB965B600AA5BF9 /* MovieDetailVC.xib */,
 			);
 			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		5E4FCC732BB98A2700E15B6D /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		5E86AA4D2BB915C9002FFEAE /* Common */ = {
@@ -367,6 +378,7 @@
 				5E3064B92BB961AA00AA5BF9 /* CheckInVC.xib in Resources */,
 				5E86AA5D2BB91B36002FFEAE /* BebasNeue-Bold.otf in Resources */,
 				5E86AA5C2BB91B36002FFEAE /* BebasNeue-Thin.otf in Resources */,
+				5E4FCC752BB98A3000E15B6D /* Launch Screen.storyboard in Resources */,
 				5E86AA5E2BB91B36002FFEAE /* BebasNeue-Regular.otf in Resources */,
 				5E3064AF2BB9614300AA5BF9 /* SearchVC.xib in Resources */,
 				5E1F529A2BB084F000D116B4 /* HomeVC.xib in Resources */,
@@ -579,7 +591,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmthusiast/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -610,7 +622,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmthusiast/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
