@@ -40,7 +40,9 @@ class HomeSliderView: BaseCVCell {
 
 }
 
-extension HomeSliderView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HomeSliderView: UICollectionViewDataSource, 
+                            UICollectionViewDelegate,
+                            UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 140, height: 200)
     }

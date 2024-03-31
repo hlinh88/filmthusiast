@@ -90,7 +90,9 @@ class HomeVC: UIViewController {
 
 }
 
-extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HomeVC: UICollectionViewDataSource, 
+                    UICollectionViewDelegate,
+                    UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         if kind == UICollectionView.elementKindSectionHeader {
