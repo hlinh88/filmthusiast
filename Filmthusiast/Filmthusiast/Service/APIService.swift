@@ -12,7 +12,7 @@ class APIService {
 
     static let shared = APIService()
 
-    func callAPI<T: Decodable>(urlString: String, method: HTTPMethod = .get, headers: [String: String]? = nil, completion: @escaping (Result<T, APIError>) -> Void) {
+    func callAPI<T: Decodable>(urlString: String, method: HTTPMethod = .get, completion: @escaping (Result<T, APIError>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidURL))
             return
@@ -20,11 +20,13 @@ class APIService {
 
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        let headers = [
+            "accept": "application/json",
+            "Authorization": "Bearer \(APIConstant.ACCESS_TOKEN)"
+        ]
 
-        if let headers = headers {
-            for (key, value) in headers {
-                request.addValue(value, forHTTPHeaderField: key)
-            }
+        for (key, value) in headers {
+            request.addValue(value, forHTTPHeaderField: key)
         }
 
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -40,6 +42,10 @@ class APIService {
 
             do {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
+                print("""
+                    ==API Response: 💖💖💖
+                    \(decodedData)
+                    """)
                 completion(.success(decodedData))
             } catch {
                 completion(.failure(.invalidData))

@@ -8,8 +8,14 @@
 import UIKit
 import Reusable
 
+protocol HomeSliderViewOutput: AnyObject {
+    func goToMovieDetail(_ id: Int)
+}
+
 class HomeSliderView: BaseCVCell {
     @IBOutlet weak var collectionView: UICollectionView!
+
+    weak var output: HomeSliderViewOutput?
 
     var movies: [Movie] = [] {
         didSet {
@@ -57,5 +63,10 @@ extension HomeSliderView: UICollectionViewDataSource,
 
         return cell
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        output?.goToMovieDetail(movie.id)
+    }
+
 }

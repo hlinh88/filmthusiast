@@ -13,15 +13,19 @@ struct Response: Codable {
 }
 
 struct Movie: Codable {
+    var id: Int
     var backdrop: String
     var title: String
     var overview: String
     var poster: String
+    var releaseDate: String?
+    var status: String?
 
     enum CodingKeys: String, CodingKey {
         case backdrop = "backdrop_path"
         case poster = "poster_path"
-        case title, overview
+        case releaseDate = "release_date"
+        case title, overview, id, status
     }
 }
 

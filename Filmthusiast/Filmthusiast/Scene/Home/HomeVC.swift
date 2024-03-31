@@ -32,6 +32,11 @@ class HomeVC: UIViewController {
         setupUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+
     // MARK: Setup
     private func setupUI() {
         setupCollectionView()
@@ -48,17 +53,12 @@ class HomeVC: UIViewController {
     // MARK: Interactor
     func getMovies() {
         let group = DispatchGroup()
-
-        let headers = [
-            "accept": "application/json",
-            "Authorization": "Bearer \(APIConstant.ACCESS_TOKEN)"
-        ]
-
+        
         for category in Section.allCases {
             group.enter()
 
             let urlString = "https://api.themoviedb.org/3/movie/\(category.rawValue)?language=en-US&page=1"
-            APIService.shared.callAPI(urlString: urlString, headers: headers) { [weak self] (result: Result<MovieList, APIError>) in
+            APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<MovieList, APIError>) in
                 defer {
                     group.leave()
                 }
@@ -77,7 +77,7 @@ class HomeVC: UIViewController {
                     }
 
                 case .failure(let error):
-                    print("API Error: \(error)")
+                    self?.showAlert(title: "Error", message: error.localizedDescription, btnString: "OK")
                 }
             }
         }
@@ -137,6 +137,7 @@ extension HomeVC: UICollectionViewDataSource,
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeSliderView = collectionView.dequeueReusableCell(for: indexPath, cellType: HomeSliderView.self)
+        cell.output = self
 
         switch sections[indexPath.section] {
         case .NowPlaying:
@@ -152,5 +153,12 @@ extension HomeVC: UICollectionViewDataSource,
         return cell
     }
 
+}
 
+extension HomeVC: HomeSliderViewOutput {
+    func goToMovieDetail(_ id: Int) {
+        let vc = MovieDetailVC(id)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
