@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import Reusable
 
 extension UIViewController {
     func showAlert(title: String, message: String, btnString: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: btnString, style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: btnString, style: UIAlertAction.Style.default, handler: {(alert: UIAlertAction!) in self?.dismiss(animated: true)}))
 
-        self.present(alert, animated: true, completion: nil)
+            self?.present(alert, animated: true, completion: nil)
+        }
     }
 }

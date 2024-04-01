@@ -11,7 +11,6 @@ class TabBarVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemYellow
 
         let vc1 = UINavigationController(rootViewController: HomeVC())
         let vc2 = UINavigationController(rootViewController: SearchVC())
@@ -35,9 +34,14 @@ class TabBarVC: UITabBarController {
         vc3.title = "Watch List"
         vc4.title = "Check in"
 
+        let blur = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = self.tabBar.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        tabBar.addSubview(blurView)
 
         tabBar.tintColor = .white
-        tabBar.backgroundColor = .darkGray
+        tabBar.unselectedItemTintColor = .white.withAlphaComponent(0.5)
 
         setViewControllers([vc1, vc2, vc3, vc4], animated: true)
 

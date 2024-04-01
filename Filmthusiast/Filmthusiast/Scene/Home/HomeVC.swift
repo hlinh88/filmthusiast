@@ -96,7 +96,7 @@ class HomeVC: UIViewController {
         let fakeMovieItem = 5
 
         for _ in 0..<fakeMovieItem {
-            let emptyMovie = Movie(id: 0, backdrop: "", title: "", overview: "", poster: "", releaseDate: nil, status: nil)
+            let emptyMovie = Movie()
             movies.append(emptyMovie)
         }
 

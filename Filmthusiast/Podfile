@@ -10,6 +10,7 @@ target 'Filmthusiast' do
   pod 'Reusable'
   pod 'ObjectMapper'
   pod 'SkeletonView'
+  pod 'SwiftyGif'
 end
 
 post_install do |installer|

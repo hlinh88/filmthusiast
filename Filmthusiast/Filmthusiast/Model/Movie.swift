@@ -6,13 +6,9 @@
 //
 
 import Foundation
+import ObjectMapper
 
-
-struct Response: Codable {
-    var data: [Movie]
-}
-
-struct Movie: Codable {
+struct Movie: ImmutableMappable {
     var id: Int
     var backdrop: String
     var title: String
@@ -21,19 +17,33 @@ struct Movie: Codable {
     var releaseDate: String?
     var status: String?
 
-    enum CodingKeys: String, CodingKey {
-        case backdrop = "backdrop_path"
-        case poster = "poster_path"
-        case releaseDate = "release_date"
-        case title, overview, id, status
+    init() {
+        self.id = 0
+        self.backdrop = ""
+        self.title = ""
+        self.overview = ""
+        self.poster = ""
+        self.releaseDate = nil
+        self.status = nil
+    }
+
+    init(map: ObjectMapper.Map) throws {
+        id = try map.value("id")
+        backdrop = try map.value("backdrop_path")
+        title = try map.value("title")
+        overview = try map.value("overview")
+        poster = try map.value("poster_path")
+        releaseDate = try? map.value("release_date")
+        status = try? map.value("status")
     }
 }
 
-struct MovieList: Codable {
+struct MovieList: ImmutableMappable {
     var results: [Movie]
     var page: Int
 
-    enum CodingKeys: String, CodingKey {
-        case results, page
+    init(map: ObjectMapper.Map) throws {
+        results = try map.value("results")
+        page = try map.value("page")
     }
 }

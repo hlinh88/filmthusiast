@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SwiftyGif
 
 class MovieDetailVC:  UIViewController {
     @IBOutlet weak var lbNavBar: UILabel!
@@ -16,9 +17,12 @@ class MovieDetailVC:  UIViewController {
     @IBOutlet weak var ivBackdrop: UIImageView!
     @IBOutlet weak var ivPoster: UIImageView!
     @IBOutlet weak var lbDesc: UILabel!
-
+    @IBOutlet weak var vLoading: UIView!
+    @IBOutlet weak var ivLoading: UIImageView!
+    
     var id: Int
     private var movie: Movie?
+    private var isLoading: Bool = true
 
     init(_ id: Int) {
         self.id = id
@@ -46,14 +50,35 @@ class MovieDetailVC:  UIViewController {
         lbTitle.text = movie.title
         lbYear.text = "\(releaseDate.prefix(4))"
         lbStatus.text = movie.status
-        ivBackdrop.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_BASE_URL)\(movie.backdrop)"))
+        ivBackdrop.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_ORIGINAL_BASE_URL)\(movie.backdrop)"))
         ivPoster.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_BASE_URL)\(movie.poster)"))
         lbDesc.text = movie.overview
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
+            self?.hideLoading()
+        }
+
+    }
+
+    private func showLoading() {
+        vLoading.isHidden = false
+        do {
+            let gif = try UIImage(gifName: "loading.gif")
+            self.ivLoading.setGifImage(gif, loopCount: -1)
+        } catch {
+            print("Error loading gif:", error.localizedDescription)
+        }
+    }
+
+    private func hideLoading() {
+        vLoading.isHidden = true
     }
 
     // MARK: Interactor
 
     func getMovieDetail() {
+        showLoading()
+        
         let urlString = "https://api.themoviedb.org/3/movie/\(id)"
         APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<Movie, APIError>) in
 

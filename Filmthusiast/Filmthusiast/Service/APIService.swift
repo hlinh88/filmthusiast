@@ -12,7 +12,7 @@ class APIService {
 
     static let shared = APIService()
 
-    func callAPI<T: Decodable>(urlString: String, method: HTTPMethod = .get, completion: @escaping (Result<T, APIError>) -> Void) {
+    func callAPI<T: ImmutableMappable>(urlString: String, method: HTTPMethod = .get, completion: @escaping (Result<T, APIError>) -> Void) {
         guard let url = URL(string: urlString) else {
             completion(.failure(.invalidURL))
             return
@@ -41,7 +41,11 @@ class APIService {
             }
 
             do {
-                let decodedData = try JSONDecoder().decode(T.self, from: data)
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                guard let decodedData =  Mapper<T>().map(JSONObject: jsonObject) else {
+                    completion(.failure(.invalidData))
+                    return
+                }
                 print("""
                     ==API Response: 💖💖💖
                     \(decodedData)

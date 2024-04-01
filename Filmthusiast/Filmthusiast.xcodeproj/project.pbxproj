@@ -28,6 +28,7 @@
 		5E3064B92BB961AA00AA5BF9 /* CheckInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3064B72BB961AA00AA5BF9 /* CheckInVC.xib */; };
 		5E3064BD2BB965B600AA5BF9 /* MovieDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3064BB2BB965B600AA5BF9 /* MovieDetailVC.swift */; };
 		5E3064BE2BB965B600AA5BF9 /* MovieDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E3064BC2BB965B600AA5BF9 /* MovieDetailVC.xib */; };
+		5E49FE7E2BBB0CCC009EB08B /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5E49FE7D2BBB0CCC009EB08B /* loading.gif */; };
 		5E4FCC752BB98A3000E15B6D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */; };
 		5E86AA502BB915E8002FFEAE /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA4F2BB915E8002FFEAE /* BaseCVCell.swift */; };
 		5E86AA5A2BB91B36002FFEAE /* BebasNeue-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA552BB91B36002FFEAE /* BebasNeue-Book.otf */; };
@@ -67,6 +68,7 @@
 		5E3064B72BB961AA00AA5BF9 /* CheckInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInVC.xib; sourceTree = "<group>"; };
 		5E3064BB2BB965B600AA5BF9 /* MovieDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailVC.swift; sourceTree = "<group>"; };
 		5E3064BC2BB965B600AA5BF9 /* MovieDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailVC.xib; sourceTree = "<group>"; };
+		5E49FE7D2BBB0CCC009EB08B /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5E86AA4F2BB915E8002FFEAE /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
 		5E86AA552BB91B36002FFEAE /* BebasNeue-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Book.otf"; sourceTree = "<group>"; };
@@ -266,6 +268,14 @@
 			path = MovieDetail;
 			sourceTree = "<group>";
 		};
+		5E49FE742BBB09F3009EB08B /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				5E49FE7D2BBB0CCC009EB08B /* loading.gif */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		5E4FCC732BB98A2700E15B6D /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +287,7 @@
 		5E86AA4D2BB915C9002FFEAE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5E49FE742BBB09F3009EB08B /* Loading */,
 				5E86AA5F2BB91C76002FFEAE /* Font */,
 				5E86AA4E2BB915CE002FFEAE /* Cell */,
 			);
@@ -378,6 +389,7 @@
 				5E3064B92BB961AA00AA5BF9 /* CheckInVC.xib in Resources */,
 				5E86AA5D2BB91B36002FFEAE /* BebasNeue-Bold.otf in Resources */,
 				5E86AA5C2BB91B36002FFEAE /* BebasNeue-Thin.otf in Resources */,
+				5E49FE7E2BBB0CCC009EB08B /* loading.gif in Resources */,
 				5E4FCC752BB98A3000E15B6D /* Launch Screen.storyboard in Resources */,
 				5E86AA5E2BB91B36002FFEAE /* BebasNeue-Regular.otf in Resources */,
 				5E3064AF2BB9614300AA5BF9 /* SearchVC.xib in Resources */,
