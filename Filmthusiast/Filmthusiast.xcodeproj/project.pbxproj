@@ -41,6 +41,8 @@
 		5E86AA672BB91E89002FFEAE /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */; };
 		5E86AA6E2BB9263F002FFEAE /* HomeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */; };
 		5E86AA6F2BB9263F002FFEAE /* HomeSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */; };
+		5EBEF09A2BBC347500EBB813 /* LoadingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBEF0992BBC347500EBB813 /* LoadingVC.xib */; };
+		5EBEF09B2BBC347500EBB813 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEF0982BBC347500EBB813 /* LoadingVC.swift */; };
 		A8E408FE7BFD8341CF68007D /* Pods_Filmthusiast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7FA2B027BF6475637B27C3 /* Pods_Filmthusiast.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeader.xib; sourceTree = "<group>"; };
 		5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderView.swift; sourceTree = "<group>"; };
 		5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSliderView.xib; sourceTree = "<group>"; };
+		5EBEF0982BBC347500EBB813 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		5EBEF0992BBC347500EBB813 /* LoadingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingVC.xib; sourceTree = "<group>"; };
 		7DAEE9A08085DA2BCC13ACB3 /* Pods-Filmthusiast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmthusiast.debug.xcconfig"; path = "Target Support Files/Pods-Filmthusiast/Pods-Filmthusiast.debug.xcconfig"; sourceTree = "<group>"; };
 		9F7FA2B027BF6475637B27C3 /* Pods_Filmthusiast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Filmthusiast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC22A59B5A521FA0FC75CE36 /* Pods-Filmthusiast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Filmthusiast.release.xcconfig"; path = "Target Support Files/Pods-Filmthusiast/Pods-Filmthusiast.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		5E1F52972BB084DC00D116B4 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				5E49FE742BBB09F3009EB08B /* Loading */,
 				5E3064BA2BB965A500AA5BF9 /* MovieDetail */,
 				5E3064B52BB9616C00AA5BF9 /* CheckIn */,
 				5E3064B02BB9614F00AA5BF9 /* Watchlist */,
@@ -272,6 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				5E49FE7D2BBB0CCC009EB08B /* loading.gif */,
+				5EBEF0982BBC347500EBB813 /* LoadingVC.swift */,
+				5EBEF0992BBC347500EBB813 /* LoadingVC.xib */,
 			);
 			path = Loading;
 			sourceTree = "<group>";
@@ -287,7 +294,6 @@
 		5E86AA4D2BB915C9002FFEAE /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				5E49FE742BBB09F3009EB08B /* Loading */,
 				5E86AA5F2BB91C76002FFEAE /* Font */,
 				5E86AA4E2BB915CE002FFEAE /* Cell */,
 			);
@@ -392,6 +398,7 @@
 				5E49FE7E2BBB0CCC009EB08B /* loading.gif in Resources */,
 				5E4FCC752BB98A3000E15B6D /* Launch Screen.storyboard in Resources */,
 				5E86AA5E2BB91B36002FFEAE /* BebasNeue-Regular.otf in Resources */,
+				5EBEF09A2BBC347500EBB813 /* LoadingVC.xib in Resources */,
 				5E3064AF2BB9614300AA5BF9 /* SearchVC.xib in Resources */,
 				5E1F529A2BB084F000D116B4 /* HomeVC.xib in Resources */,
 				5E1F52A62BB086F800D116B4 /* HomeMovieCell.xib in Resources */,
@@ -459,6 +466,7 @@
 				5E3064B82BB961AA00AA5BF9 /* CheckInVC.swift in Sources */,
 				5E1F52912BB07F7600D116B4 /* APIService.swift in Sources */,
 				5E3064B32BB9616800AA5BF9 /* WatchListVC.swift in Sources */,
+				5EBEF09B2BBC347500EBB813 /* LoadingVC.swift in Sources */,
 				5E3064BD2BB965B600AA5BF9 /* MovieDetailVC.swift in Sources */,
 				5E3064AA2BB960DA00AA5BF9 /* TabBarVC.swift in Sources */,
 				5E1F52932BB07FAE00D116B4 /* APIConstant.swift in Sources */,

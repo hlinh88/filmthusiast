@@ -11,6 +11,7 @@ target 'Filmthusiast' do
   pod 'ObjectMapper'
   pod 'SkeletonView'
   pod 'SwiftyGif'
+  pod 'SVProgressHUD'
 end
 
 post_install do |installer|

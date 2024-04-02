@@ -11,14 +11,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailVC" customModule="Filmthusiast" customModuleProvider="target">
             <connections>
                 <outlet property="ivBackdrop" destination="wnh-bF-znh" id="vC9-YJ-qqY"/>
-                <outlet property="ivLoading" destination="9Ug-Uv-J3c" id="blU-VY-LnE"/>
                 <outlet property="ivPoster" destination="IFe-Bk-HCd" id="csF-qJ-II6"/>
                 <outlet property="lbDesc" destination="1XW-Oa-RbA" id="LB8-TW-Y38"/>
                 <outlet property="lbNavBar" destination="bnM-Og-eyH" id="I3f-bm-CGv"/>
                 <outlet property="lbStatus" destination="LW6-Ad-4d2" id="tW6-CH-YyX"/>
                 <outlet property="lbTitle" destination="uqc-i4-gHo" id="SZk-o3-hGf"/>
                 <outlet property="lbYear" destination="wsB-wm-YXk" id="prh-OO-maC"/>
-                <outlet property="vLoading" destination="i3k-Ms-RnK" id="Qaq-eH-juy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -191,34 +189,13 @@
                         <constraint firstItem="h6k-p0-0b3" firstAttribute="leading" secondItem="Mw3-5f-dU8" secondAttribute="leading" id="sse-Wx-OoK"/>
                     </constraints>
                 </scrollView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3k-Ms-RnK" userLabel="Loading View">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ug-Uv-J3c">
-                            <rect key="frame" x="71.666666666666686" y="254.66666666666669" width="250" height="250"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="250" id="2D3-A8-Ulm"/>
-                                <constraint firstAttribute="width" constant="250" id="oIl-63-1Gv"/>
-                            </constraints>
-                        </imageView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="9Ug-Uv-J3c" firstAttribute="centerX" secondItem="i3k-Ms-RnK" secondAttribute="centerX" id="FxW-a2-4JF"/>
-                        <constraint firstItem="9Ug-Uv-J3c" firstAttribute="centerY" secondItem="i3k-Ms-RnK" secondAttribute="centerY" id="byv-UV-N0l"/>
-                    </constraints>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="i3k-Ms-RnK" secondAttribute="trailing" id="0nc-AC-uSS"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="i3k-Ms-RnK" secondAttribute="bottom" id="2JE-OY-nOw"/>
                 <constraint firstItem="GIw-V5-rBT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2jV-Nc-Kgn"/>
-                <constraint firstItem="i3k-Ms-RnK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="4FX-1h-q86"/>
                 <constraint firstAttribute="bottom" secondItem="Mw3-5f-dU8" secondAttribute="bottom" id="Lin-9j-kPd"/>
                 <constraint firstItem="Mw3-5f-dU8" firstAttribute="top" secondItem="GIw-V5-rBT" secondAttribute="bottom" id="Sai-4r-ihE"/>
-                <constraint firstItem="i3k-Ms-RnK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VhD-tV-OB2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mw3-5f-dU8" secondAttribute="trailing" id="Vkb-aQ-FlY"/>
                 <constraint firstItem="h6k-p0-0b3" firstAttribute="width" secondItem="GIw-V5-rBT" secondAttribute="width" id="e2B-XH-NHF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GIw-V5-rBT" secondAttribute="trailing" id="emu-UL-NbG"/>

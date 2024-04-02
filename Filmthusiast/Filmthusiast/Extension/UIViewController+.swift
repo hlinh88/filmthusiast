@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Reusable
+import SVProgressHUD
 
 extension UIViewController {
     func showAlert(title: String, message: String, btnString: String) {
@@ -19,3 +19,4 @@ extension UIViewController {
         }
     }
 }
+

@@ -15,6 +15,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Filmthusiast" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="hhu-oz-G2V" id="Rqd-VB-QWH"/>
+                <outlet property="topBar" destination="GZu-Ou-ZKA" id="2fK-5r-VYX"/>
+                <outlet property="vBlur" destination="aeA-77-uP7" id="0ke-qK-sSD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,14 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmthusiast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t28-O0-Nuf">
-                    <rect key="frame" x="16" y="75" width="361" height="57"/>
-                    <fontDescription key="fontDescription" name="KenyanCoffee" family="Kenyan Coffee" pointSize="50"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hhu-oz-G2V">
-                    <rect key="frame" x="0.0" y="148" width="393" height="704"/>
+                    <rect key="frame" x="0.0" y="120" width="393" height="732"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I4t-vc-6eo">
                         <size key="itemSize" width="128" height="128"/>
@@ -42,17 +38,43 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-Ou-ZKA">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeA-77-uP7" customClass="UIVisualEffectView">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmthusiast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t28-O0-Nuf">
+                            <rect key="frame" x="16" y="59" width="361" height="45"/>
+                            <fontDescription key="fontDescription" name="KenyanCoffee" family="Kenyan Coffee" pointSize="45"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="t28-O0-Nuf" firstAttribute="leading" secondItem="GZu-Ou-ZKA" secondAttribute="leading" constant="16" id="G1n-zx-aeS"/>
+                        <constraint firstAttribute="trailing" secondItem="aeA-77-uP7" secondAttribute="trailing" id="G9b-YY-lPk"/>
+                        <constraint firstAttribute="height" constant="120" id="Him-fY-njT"/>
+                        <constraint firstItem="aeA-77-uP7" firstAttribute="top" secondItem="GZu-Ou-ZKA" secondAttribute="top" id="M67-Wv-TsY"/>
+                        <constraint firstItem="aeA-77-uP7" firstAttribute="leading" secondItem="GZu-Ou-ZKA" secondAttribute="leading" id="Okj-u2-P6C"/>
+                        <constraint firstAttribute="bottom" secondItem="aeA-77-uP7" secondAttribute="bottom" id="dob-xn-bpO"/>
+                        <constraint firstAttribute="trailing" secondItem="t28-O0-Nuf" secondAttribute="trailing" constant="16" id="lCz-aM-Jxs"/>
+                        <constraint firstAttribute="bottom" secondItem="t28-O0-Nuf" secondAttribute="bottom" constant="16" id="mvK-6f-62Y"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="t28-O0-Nuf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="2i7-nk-dX1"/>
                 <constraint firstAttribute="bottom" secondItem="hhu-oz-G2V" secondAttribute="bottom" id="5YB-XQ-vxw"/>
-                <constraint firstItem="t28-O0-Nuf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="AUI-Yw-v5o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="t28-O0-Nuf" secondAttribute="top" id="BrD-Rz-UHi"/>
                 <constraint firstItem="hhu-oz-G2V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IXb-ll-zty"/>
+                <constraint firstItem="GZu-Ou-ZKA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TM8-k6-hc7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hhu-oz-G2V" secondAttribute="trailing" id="Vvw-s9-6R0"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t28-O0-Nuf" secondAttribute="trailing" constant="16" id="YFs-gz-wwn"/>
-                <constraint firstItem="hhu-oz-G2V" firstAttribute="top" secondItem="t28-O0-Nuf" secondAttribute="bottom" constant="16" id="ugh-et-VWO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GZu-Ou-ZKA" secondAttribute="trailing" id="euB-wp-usY"/>
+                <constraint firstItem="hhu-oz-G2V" firstAttribute="top" secondItem="GZu-Ou-ZKA" secondAttribute="bottom" id="px0-H1-TvY"/>
+                <constraint firstItem="GZu-Ou-ZKA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="thf-lj-Pgl"/>
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>

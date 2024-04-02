@@ -19,5 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func showLoading() {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = LoadingVC()
+        window?.makeKeyAndVisible()
+    }
+
+    func hideLoading() {
+        window?.rootViewController?.dismiss(animated: true)
+    }
+
 }
 

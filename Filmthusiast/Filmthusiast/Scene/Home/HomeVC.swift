@@ -17,12 +17,16 @@ class HomeVC: UIViewController {
         case Upcoming = "upcoming"
     }
 
+    @IBOutlet weak var topBar: UIView!
+    @IBOutlet weak var vBlur: UIVisualEffectView!
     @IBOutlet weak var collectionView: UICollectionView!
 
     var nowPlayingMovies: [Movie] = []
     var popularMovies: [Movie] = []
     var topRatedMovies: [Movie] = []
     var upcomingMovies: [Movie] = []
+
+    var showcaseMovie: Movie?
 
     let sections: [Section] = [.NowPlaying, .Popular, .TopRated, .Upcoming]
 
@@ -31,8 +35,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
-            self?.getMovies()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
+            self?.getTestMovies()
         }
     }
 
@@ -43,7 +47,15 @@ class HomeVC: UIViewController {
 
     // MARK: Setup
     private func setupUI() {
+        setupTopBar()   
         setupCollectionView()
+    }
+
+    private func setupTopBar() {
+        let blur = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        vBlur.layer.opacity = 0
+        vBlur.effect = blur
+        vBlur.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 
     private func setupCollectionView() {
@@ -85,10 +97,33 @@ class HomeVC: UIViewController {
         }
 
         group.notify(queue: .main) { [weak self] in
+            self?.showcaseMovie = self?.topRatedMovies.first
             self?.isLoadingData = false
             self?.collectionView.reloadData()
         }
 
+    }
+
+    func getTestMovies() {
+        let urlString = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
+        APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<MovieList, APIError>) in
+            switch result {
+            case .success(let movieList):
+                self?.nowPlayingMovies = movieList.results                
+                self?.popularMovies = movieList.results
+                self?.topRatedMovies = movieList.results
+                self?.upcomingMovies = movieList.results
+                self?.showcaseMovie = movieList.results.first
+                self?.isLoadingData = false
+                DispatchQueue.main.async { [weak self] in
+                    self?.collectionView.reloadData()
+                }
+
+
+            case .failure(let error):
+                self?.showAlert(title: "Error", message: error.localizedDescription, btnString: "OK")
+            }
+        }
     }
 
     private func generateSkeletonMovies() -> [Movie] {
@@ -170,6 +205,16 @@ extension HomeVC: UICollectionViewDataSource,
         }
 
         return cell
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.y
+
+        let maxOffset: CGFloat = 86
+        let normalizedOffset = min(max(yOffset, 0), maxOffset)
+        let opacity = normalizedOffset / maxOffset
+
+        vBlur.alpha = opacity
     }
 
 }
