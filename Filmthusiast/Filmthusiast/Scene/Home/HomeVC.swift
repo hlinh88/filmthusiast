@@ -6,15 +6,30 @@
 //
 
 import UIKit
-import Reusable
-import Network
 
-class HomeVC: UIViewController {
-    enum Section: String, CaseIterable {
-        case NowPlaying = "now_playing"
-        case Popular = "popular"
-        case TopRated = "top_rated"
-        case Upcoming = "upcoming"
+class HomeVC: BaseVC {
+
+    enum Section: CaseIterable {
+        case Showcase
+        case NowPlaying
+        case Popular
+        case TopRated
+        case Upcoming
+
+        var title: String {
+            switch self {
+            case .NowPlaying:
+                return "now_playing"
+            case .Popular:
+                return "popular"
+            case .TopRated:
+                return "top_rated"
+            case .Upcoming:
+                return "upcoming"
+            default:
+                return ""
+            }
+        }
     }
 
     @IBOutlet weak var topBar: UIView!
@@ -28,15 +43,15 @@ class HomeVC: UIViewController {
 
     var showcaseMovie: Movie?
 
-    let sections: [Section] = [.NowPlaying, .Popular, .TopRated, .Upcoming]
+    let sections: [Section] = [.Showcase, .NowPlaying, .Popular, .TopRated, .Upcoming]
 
     private var isLoadingData: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) { [weak self] in
-            self?.getTestMovies()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+            self?.getMovies()
         }
     }
 
@@ -60,20 +75,24 @@ class HomeVC: UIViewController {
 
     private func setupCollectionView() {
         collectionView.register(cellType: HomeMovieCell.self)
+        collectionView.register(cellType: HomeShowcaseCell.self)
         collectionView.register(cellType: HomeSliderView.self)
         collectionView.register(supplementaryViewType: HomeSectionHeader.self, ofKind: UICollectionView.elementKindSectionHeader)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 44, right: 0)
     }
 
     // MARK: Interactor
     func getMovies() {
         let group = DispatchGroup()
-        
-        for category in Section.allCases {
+
+        Section.allCases.forEach { category in
+            guard category != .Showcase else { return }
+
             group.enter()
 
-            let urlString = "https://api.themoviedb.org/3/movie/\(category.rawValue)?language=en-US&page=1"
+            let urlString = "https://api.themoviedb.org/3/movie/\(category.title)?language=en-US&page=1"
             APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<MovieList, APIError>) in
                 switch result {
                 case .success(let movieList):
@@ -86,6 +105,8 @@ class HomeVC: UIViewController {
                         self?.topRatedMovies = movieList.results
                     case .Upcoming:
                         self?.upcomingMovies = movieList.results
+                    default:
+                        print("Do nothing")
                     }
 
                 case .failure(let error):
@@ -104,33 +125,10 @@ class HomeVC: UIViewController {
 
     }
 
-    func getTestMovies() {
-        let urlString = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
-        APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<MovieList, APIError>) in
-            switch result {
-            case .success(let movieList):
-                self?.nowPlayingMovies = movieList.results                
-                self?.popularMovies = movieList.results
-                self?.topRatedMovies = movieList.results
-                self?.upcomingMovies = movieList.results
-                self?.showcaseMovie = movieList.results.first
-                self?.isLoadingData = false
-                DispatchQueue.main.async { [weak self] in
-                    self?.collectionView.reloadData()
-                }
-
-
-            case .failure(let error):
-                self?.showAlert(title: "Error", message: error.localizedDescription, btnString: "OK")
-            }
-        }
-    }
-
-    private func generateSkeletonMovies() -> [Movie] {
+    private func generateSkeletonMovies(numberOfMovies: Int) -> [Movie] {
         var movies: [Movie] = []
-        let fakeMovieItem = 5
 
-        for _ in 0..<fakeMovieItem {
+        for _ in 0..<numberOfMovies {
             let emptyMovie = Movie()
             movies.append(emptyMovie)
         }
@@ -150,6 +148,8 @@ extension HomeVC: UICollectionViewDataSource,
                                                                              for: indexPath,
                                                                              viewType: HomeSectionHeader.self)
             switch sections[indexPath.section] {
+            case .Showcase:
+                headerView.configHeader(with: "")
             case .NowPlaying:
                 headerView.configHeader(with: "Now Playing")
             case .Popular:
@@ -168,12 +168,24 @@ extension HomeVC: UICollectionViewDataSource,
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 
-        return CGSize(width: collectionView.frame.width, height: 50)
+        let width = collectionView.frame.width
+        switch sections[section] {
+        case .Showcase:
+            return .zero
+        default:
+            return CGSize(width: width, height: 50)
+        }
+
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
-        return CGSize(width: width, height: 200)
+        switch sections[indexPath.section] {
+        case .Showcase:
+            return CGSize(width: width, height: 500)
+        default:
+            return CGSize(width: width, height: 200)
+        }
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -190,9 +202,28 @@ extension HomeVC: UICollectionViewDataSource,
         cell.output = self
 
         if isLoadingData {
-            cell.configCell(with: generateSkeletonMovies(), isLoadingData: true)
+            switch sections[indexPath.section] {
+            case .Showcase:
+                let cell: HomeShowcaseCell = collectionView.dequeueReusableCell(for: indexPath, cellType: HomeShowcaseCell.self)
+                cell.configCell(with: Movie())
+                cell.showSkeleton()
+
+                return cell
+
+            default:
+                cell.configCell(with: generateSkeletonMovies(numberOfMovies: 5), isLoadingData: true)
+            }
+            
         } else {
             switch sections[indexPath.section] {
+            case .Showcase:
+                guard let showcaseMovie else { return UICollectionViewCell() }
+                let cell: HomeShowcaseCell = collectionView.dequeueReusableCell(for: indexPath, cellType: HomeShowcaseCell.self)
+                cell.configCell(with: showcaseMovie)
+                cell.hideSkeleton()
+
+                return cell
+
             case .NowPlaying:
                 cell.configCell(with: nowPlayingMovies)
             case .Popular:
