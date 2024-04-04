@@ -29,10 +29,18 @@ struct Movie: ImmutableMappable {
 
     init(map: ObjectMapper.Map) throws {
         id = try map.value("id")
-        backdrop = try map.value("backdrop_path")
+        if let backdropEndpoint: String = try map.value("backdrop_path") {
+            backdrop = Constant.IMAGE_ORIGINAL_BASE_URL + backdropEndpoint
+        } else {
+            backdrop = ""
+        }
         title = try map.value("title")
         overview = try map.value("overview")
-        poster = try map.value("poster_path")
+        if let posterEndpoint: String = try map.value("poster_path") {
+            poster = Constant.IMAGE_BASE_URL + posterEndpoint
+        } else {
+            poster = ""
+        }
         releaseDate = try? map.value("release_date")
         status = try? map.value("status")
     }

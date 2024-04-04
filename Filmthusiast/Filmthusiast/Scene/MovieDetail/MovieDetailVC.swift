@@ -49,8 +49,8 @@ class MovieDetailVC: UIViewController {
         lbTitle.text = movie.title
         lbYear.text = "\(releaseDate.prefix(4))"
         lbStatus.text = movie.status
-        ivBackdrop.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_ORIGINAL_BASE_URL)\(movie.backdrop)"))
-        ivPoster.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_BASE_URL)\(movie.poster)"))
+        ivBackdrop.kf.setImage(with: URL(string: movie.backdrop))
+        ivPoster.kf.setImage(with: URL(string: movie.poster))
         lbDesc.text = movie.overview
     }
 

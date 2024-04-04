@@ -24,7 +24,7 @@ class HomeMovieCell: BaseCVCell {
     }
 
     func configCell(with movie: Movie) {
-        ivBanner.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_BASE_URL)\(movie.poster)"))
+        ivBanner.kf.setImage(with: URL(string: movie.poster))
     }
 
     func showSkeleton() {

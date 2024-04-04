@@ -22,7 +22,7 @@ class APIService {
         request.httpMethod = method.rawValue
         let headers = [
             "accept": "application/json",
-            "Authorization": "Bearer \(APIConstant.ACCESS_TOKEN)"
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZjc5NmUyMDE0M2E3MzU2NTEzZGY1ZjAyOWJlYTJhOSIsInN1YiI6IjY1ZjgyMDE3ZTIxMDIzMDE3ZWVmZWIxNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FJsf7kR_IZax0Y80iwbZlZDFxNzoWa18i_b2uHikQxA"
         ]
 
         for (key, value) in headers {

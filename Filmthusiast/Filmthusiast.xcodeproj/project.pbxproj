@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FCA9DB92BBE506A007C38BA /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA9DB82BBE506A007C38BA /* Constant.swift */; };
 		5E1F52792BB07E2100D116B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F52782BB07E2100D116B4 /* AppDelegate.swift */; };
 		5E1F52832BB07E2100D116B4 /* Filmthusiast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F52812BB07E2100D116B4 /* Filmthusiast.xcdatamodeld */; };
 		5E1F52852BB07E2200D116B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1F52842BB07E2200D116B4 /* Assets.xcassets */; };
 		5E1F52912BB07F7600D116B4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F52902BB07F7600D116B4 /* APIService.swift */; };
-		5E1F52932BB07FAE00D116B4 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F52922BB07FAE00D116B4 /* APIConstant.swift */; };
 		5E1F52962BB0815600D116B4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F52952BB0815600D116B4 /* Movie.swift */; };
 		5E1F529A2BB084F000D116B4 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1F52992BB084F000D116B4 /* HomeVC.xib */; };
 		5E1F529B2BB084F000D116B4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F52982BB084F000D116B4 /* HomeVC.swift */; };
@@ -51,13 +51,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FCA9DB82BBE506A007C38BA /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		5E1F52752BB07E2100D116B4 /* Filmthusiast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Filmthusiast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1F52782BB07E2100D116B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E1F52822BB07E2100D116B4 /* Filmthusiast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Filmthusiast.xcdatamodel; sourceTree = "<group>"; };
 		5E1F52842BB07E2200D116B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E1F52892BB07E2200D116B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1F52902BB07F7600D116B4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		5E1F52922BB07FAE00D116B4 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		5E1F52952BB0815600D116B4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		5E1F52982BB084F000D116B4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		5E1F52992BB084F000D116B4 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
@@ -118,6 +118,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1FCA9DB72BBE5060007C38BA /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA9DB82BBE506A007C38BA /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		5E1F526C2BB07E2100D116B4 = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				5E1F52902BB07F7600D116B4 /* APIService.swift */,
-				5E1F52922BB07FAE00D116B4 /* APIConstant.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -305,6 +312,7 @@
 		5E86AA4D2BB915C9002FFEAE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1FCA9DB72BBE5060007C38BA /* Constant */,
 				5EE19DD32BBDC49200EAC7E0 /* ViewController */,
 				5E86AA5F2BB91C76002FFEAE /* Font */,
 				5E86AA4E2BB915CE002FFEAE /* Cell */,
@@ -491,10 +499,10 @@
 				5EBEF09B2BBC347500EBB813 /* LoadingVC.swift in Sources */,
 				5E3064BD2BB965B600AA5BF9 /* MovieDetailVC.swift in Sources */,
 				5E3064AA2BB960DA00AA5BF9 /* TabBarVC.swift in Sources */,
-				5E1F52932BB07FAE00D116B4 /* APIConstant.swift in Sources */,
 				5E1F52832BB07E2100D116B4 /* Filmthusiast.xcdatamodeld in Sources */,
 				5E86AA502BB915E8002FFEAE /* BaseCVCell.swift in Sources */,
 				5E86AA662BB91E89002FFEAE /* HomeSectionHeader.swift in Sources */,
+				1FCA9DB92BBE506A007C38BA /* Constant.swift in Sources */,
 				5EE19DD52BBDC49F00EAC7E0 /* BaseVC.swift in Sources */,
 				5E5AD1C32BBDB7CA00E36460 /* HomeShowcaseCell.swift in Sources */,
 			);
@@ -630,7 +638,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 267YL39X87;
+				DEVELOPMENT_TEAM = 8Q6BRT35X9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmthusiast/Info.plist;
@@ -645,7 +653,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = develop.Filmthusiast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.develop.Filmthusiast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -661,7 +669,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 267YL39X87;
+				DEVELOPMENT_TEAM = 8Q6BRT35X9;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmthusiast/Info.plist;
@@ -676,7 +684,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = develop.Filmthusiast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.develop.Filmthusiast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

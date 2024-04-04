@@ -23,7 +23,7 @@ class HomeShowcaseCell: BaseCVCell {
     }
 
     func configCell(with movie: Movie) {
-        ivShowcase.kf.setImage(with: URL(string: "\(APIConstant.IMAGE_BASE_URL)\(movie.poster)"))
+        ivShowcase.kf.setImage(with: URL(string: movie.poster))
     }
 
     func showSkeleton() {
