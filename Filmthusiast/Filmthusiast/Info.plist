@@ -4,8 +4,8 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BebasNeue-Regular.otf</string>
-		<string>BebasNeue-Bold.otf</string>
+		<string>BebasNeueRegular.ttf</string>
+		<string>BebasNeueBold.ttf</string>
 	</array>
 </dict>
 </plist>

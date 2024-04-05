@@ -10,7 +10,7 @@ import Kingfisher
 import SwiftyGif
 import SVProgressHUD
 
-class MovieDetailVC: UIViewController {
+class MovieDetailVC: BaseVC {
     @IBOutlet weak var lbNavBar: UILabel!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbYear: UILabel!
@@ -18,10 +18,15 @@ class MovieDetailVC: UIViewController {
     @IBOutlet weak var ivBackdrop: UIImageView!
     @IBOutlet weak var ivPoster: UIImageView!
     @IBOutlet weak var lbDesc: UILabel!
+    @IBOutlet weak var clvGenres: UICollectionView!
     
     var id: Int
     private var movie: Movie?
-    private var isLoading: Bool = true
+    private var genres: [Genre] = [] {
+        didSet {
+            clvGenres.reloadData()
+        }
+    }
 
     init(_ id: Int) {
         self.id = id
@@ -34,6 +39,7 @@ class MovieDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
         getMovieDetail()
     }
 
@@ -43,6 +49,12 @@ class MovieDetailVC: UIViewController {
     }
 
     // MARK: Setup
+    private func initView() {
+        clvGenres.register(cellType: GenreCell.self)
+        clvGenres.delegate = self
+        clvGenres.dataSource = self
+    }
+    
     private func setupUI() {
         guard let movie = self.movie, let releaseDate = movie.releaseDate else { return }
         lbNavBar.text = movie.title
@@ -52,11 +64,15 @@ class MovieDetailVC: UIViewController {
         ivBackdrop.kf.setImage(with: URL(string: movie.backdrop))
         ivPoster.kf.setImage(with: URL(string: movie.poster))
         lbDesc.text = movie.overview
+        genres = movie.genres ?? []
+        
+        SVProgressHUD.dismiss()
     }
 
     // MARK: Interactor
 
     func getMovieDetail() {
+        SVProgressHUD.show()
 
         let urlString = "https://api.themoviedb.org/3/movie/\(id)"
         APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<Movie, APIError>) in
@@ -76,6 +92,24 @@ class MovieDetailVC: UIViewController {
     // MARK: Action
     @IBAction func didTapBackBtn(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+
+}
+
+extension MovieDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 30)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return genres.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: GenreCell = collectionView.dequeueReusableCell(for: indexPath, cellType: GenreCell.self)
+        cell.configCell(with: genres[indexPath.row])
+
+        return cell
     }
 
 }

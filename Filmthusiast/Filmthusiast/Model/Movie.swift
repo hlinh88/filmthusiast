@@ -16,6 +16,7 @@ struct Movie: ImmutableMappable {
     var poster: String
     var releaseDate: String?
     var status: String?
+    var genres: [Genre]?
 
     init() {
         self.id = 0
@@ -25,6 +26,7 @@ struct Movie: ImmutableMappable {
         self.poster = ""
         self.releaseDate = nil
         self.status = nil
+        self.genres = []
     }
 
     init(map: ObjectMapper.Map) throws {
@@ -43,6 +45,15 @@ struct Movie: ImmutableMappable {
         }
         releaseDate = try? map.value("release_date")
         status = try? map.value("status")
+        genres = try? map.value("genres")
+    }
+}
+
+struct Genre: ImmutableMappable {
+    var name: String
+    
+    init(map: Map) throws {
+        name = try map.value("name")
     }
 }
 

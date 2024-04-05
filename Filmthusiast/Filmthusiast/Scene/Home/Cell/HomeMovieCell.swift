@@ -16,11 +16,6 @@ class HomeMovieCell: BaseCVCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupCell()
-    }
-
-    private func setupCell() {
-        ivBanner.layer.cornerRadius = 10
     }
 
     func configCell(with movie: Movie) {
