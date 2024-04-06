@@ -8,6 +8,17 @@
 import UIKit
 import ObjectMapper
 
+enum APIEndpoint {
+    enum MOVIE_LISTS {
+        static let CATEGORY = "https://api.themoviedb.org/3/movie/%@?language=en-US&page=1"
+    }
+
+    enum MOVIE_DETAIL {
+        static let DETAILS = "https://api.themoviedb.org/3/movie/%@"
+        static let IMAGES = "https://api.themoviedb.org/3/movie/%@/images"
+    }
+}
+
 class APIService {
 
     static let shared = APIService()

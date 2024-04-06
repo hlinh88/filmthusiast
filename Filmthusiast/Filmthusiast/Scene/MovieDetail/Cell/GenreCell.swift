@@ -18,7 +18,7 @@ class GenreCell: BaseCVCell {
     
     func configCell(with genre: Genre) {
         lbGenre.text = genre.name
-        vGenre.dropShadow(shadowColor: UIColor.white.cgColor, shadowOffset: CGSize(width: 0, height: 2))
     }
-    
+
 }
+

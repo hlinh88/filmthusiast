@@ -43,7 +43,8 @@ class HomeVC: BaseVC {
 
     var showcaseMovie: Movie?
 
-    let sections: [Section] = [.Showcase, .NowPlaying, .Popular, .TopRated, .Upcoming]
+//    let sections: [Section] = [.Showcase, .NowPlaying, .Popular, .TopRated, .Upcoming]
+    let sections: [Section] = [.Showcase, .TopRated]
 
     private var isLoadingData: Bool = true
 
@@ -92,8 +93,8 @@ class HomeVC: BaseVC {
 
             group.enter()
 
-            let urlString = "https://api.themoviedb.org/3/movie/\(category.title)?language=en-US&page=1"
-            APIService.shared.callAPI(urlString: urlString) { [weak self] (result: Result<MovieList, APIError>) in
+            let endpoint = String(format: APIEndpoint.MOVIE_LISTS.CATEGORY, category.title)
+            APIService.shared.callAPI(urlString: endpoint) { [weak self] (result: Result<MovieList, APIError>) in
                 switch result {
                 case .success(let movieList):
                     switch category {
@@ -236,6 +237,15 @@ extension HomeVC: UICollectionViewDataSource,
         }
 
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if sections[indexPath.section] == .Showcase {
+            guard let showcaseMovie else { return }
+            let vc = MovieDetailVC(showcaseMovie.id)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

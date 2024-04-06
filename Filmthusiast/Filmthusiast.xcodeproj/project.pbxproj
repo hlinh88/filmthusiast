@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F38E69A2BC0119B00203F95 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F38E68C2BC0119B00203F95 /* Rubik-MediumItalic.ttf */; };
 		1F38E69B2BC0119B00203F95 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F38E68D2BC0119B00203F95 /* Rubik-Bold.ttf */; };
 		1F38E69C2BC0119B00203F95 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F38E68E2BC0119B00203F95 /* Rubik-SemiBoldItalic.ttf */; };
 		1F38E69D2BC0119B00203F95 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F38E68F2BC0119B00203F95 /* Rubik-Light.ttf */; };
@@ -59,6 +58,10 @@
 		5E86AA672BB91E89002FFEAE /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */; };
 		5E86AA6E2BB9263F002FFEAE /* HomeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */; };
 		5E86AA6F2BB9263F002FFEAE /* HomeSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */; };
+		5E91FC1C2BC1B14C00AE4CDD /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91FC1B2BC1B14C00AE4CDD /* UIColor+.swift */; };
+		5E91FC1F2BC1B62C00AE4CDD /* MovieDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91FC1D2BC1B62C00AE4CDD /* MovieDetailHeader.swift */; };
+		5E91FC202BC1B62C00AE4CDD /* MovieDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E91FC1E2BC1B62C00AE4CDD /* MovieDetailHeader.xib */; };
+		5E91FC212BC1B71700AE4CDD /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F38E68C2BC0119B00203F95 /* Rubik-MediumItalic.ttf */; };
 		5EBEF09A2BBC347500EBB813 /* LoadingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBEF0992BBC347500EBB813 /* LoadingVC.xib */; };
 		5EBEF09B2BBC347500EBB813 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEF0982BBC347500EBB813 /* LoadingVC.swift */; };
 		5EE19DD22BBDC0B500EAC7E0 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE19DD12BBDC0B500EAC7E0 /* UIView+.swift */; };
@@ -121,6 +124,9 @@
 		5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeader.xib; sourceTree = "<group>"; };
 		5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderView.swift; sourceTree = "<group>"; };
 		5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSliderView.xib; sourceTree = "<group>"; };
+		5E91FC1B2BC1B14C00AE4CDD /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		5E91FC1D2BC1B62C00AE4CDD /* MovieDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailHeader.swift; sourceTree = "<group>"; };
+		5E91FC1E2BC1B62C00AE4CDD /* MovieDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailHeader.xib; sourceTree = "<group>"; };
 		5EBEF0982BBC347500EBB813 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
 		5EBEF0992BBC347500EBB813 /* LoadingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingVC.xib; sourceTree = "<group>"; };
 		5EE19DD12BBDC0B500EAC7E0 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -188,6 +194,8 @@
 			children = (
 				1F38E6B42BC014C600203F95 /* GenreCell.swift */,
 				1F38E6B52BC014C600203F95 /* GenreCell.xib */,
+				5E91FC1D2BC1B62C00AE4CDD /* MovieDetailHeader.swift */,
+				5E91FC1E2BC1B62C00AE4CDD /* MovieDetailHeader.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 			children = (
 				5E3064A62BB95FBA00AA5BF9 /* UIViewController+.swift */,
 				5EE19DD12BBDC0B500EAC7E0 /* UIView+.swift */,
+				5E91FC1B2BC1B14C00AE4CDD /* UIColor+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -493,13 +502,13 @@
 				1F38E69B2BC0119B00203F95 /* Rubik-Bold.ttf in Resources */,
 				1F38E69D2BC0119B00203F95 /* Rubik-Light.ttf in Resources */,
 				1F38E6B12BC011E100203F95 /* BebasNeueLight.ttf in Resources */,
+				5E91FC202BC1B62C00AE4CDD /* MovieDetailHeader.xib in Resources */,
 				5E86AA672BB91E89002FFEAE /* HomeSectionHeader.xib in Resources */,
 				1F38E69F2BC0119B00203F95 /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				1F38E6A62BC0119B00203F95 /* Rubik-Regular.ttf in Resources */,
 				1F38E6A22BC0119B00203F95 /* Rubik-LightItalic.ttf in Resources */,
 				5E86AA6F2BB9263F002FFEAE /* HomeSliderView.xib in Resources */,
 				1F38E6A52BC0119B00203F95 /* Rubik-ExtraBold.ttf in Resources */,
-				1F38E69A2BC0119B00203F95 /* Rubik-MediumItalic.ttf in Resources */,
 				5E3064B92BB961AA00AA5BF9 /* CheckInVC.xib in Resources */,
 				1F38E6A32BC0119B00203F95 /* Rubik-SemiBold.ttf in Resources */,
 				1F38E6AE2BC011E100203F95 /* BebasNeueBold.ttf in Resources */,
@@ -517,6 +526,7 @@
 				1F38E6B72BC014C600203F95 /* GenreCell.xib in Resources */,
 				1F38E6A72BC0119B00203F95 /* Rubik-BoldItalic.ttf in Resources */,
 				1F38E6A12BC0119B00203F95 /* Rubik-Italic.ttf in Resources */,
+				5E91FC212BC1B71700AE4CDD /* Rubik-MediumItalic.ttf in Resources */,
 				5E1F529A2BB084F000D116B4 /* HomeVC.xib in Resources */,
 				5E1F52A62BB086F800D116B4 /* HomeMovieCell.xib in Resources */,
 			);
@@ -585,6 +595,7 @@
 				5E3064B32BB9616800AA5BF9 /* WatchListVC.swift in Sources */,
 				5EBEF09B2BBC347500EBB813 /* LoadingVC.swift in Sources */,
 				5E3064BD2BB965B600AA5BF9 /* MovieDetailVC.swift in Sources */,
+				5E91FC1F2BC1B62C00AE4CDD /* MovieDetailHeader.swift in Sources */,
 				5E3064AA2BB960DA00AA5BF9 /* TabBarVC.swift in Sources */,
 				5E1F52832BB07E2100D116B4 /* Filmthusiast.xcdatamodeld in Sources */,
 				5E86AA502BB915E8002FFEAE /* BaseCVCell.swift in Sources */,
@@ -592,6 +603,7 @@
 				1FCA9DB92BBE506A007C38BA /* Constant.swift in Sources */,
 				1F38E6B62BC014C600203F95 /* GenreCell.swift in Sources */,
 				5EE19DD52BBDC49F00EAC7E0 /* BaseVC.swift in Sources */,
+				5E91FC1C2BC1B14C00AE4CDD /* UIColor+.swift in Sources */,
 				5E5AD1C32BBDB7CA00E36460 /* HomeShowcaseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,7 +738,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8Q6BRT35X9;
+				DEVELOPMENT_TEAM = 267YL39X87;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmthusiast/Info.plist;
@@ -741,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.develop.Filmthusiast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Filmthusiast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -757,7 +769,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8Q6BRT35X9;
+				DEVELOPMENT_TEAM = 267YL39X87;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Filmthusiast/Info.plist;
@@ -772,7 +784,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.develop.Filmthusiast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Filmthusiast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

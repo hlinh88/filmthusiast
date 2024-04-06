@@ -12,6 +12,8 @@ target 'Filmthusiast' do
   pod 'SkeletonView'
   pod 'SwiftyGif'
   pod 'SVProgressHUD'
+  pod 'ImageSlideshow', '~> 1.9.0'
+  pod "ImageSlideshow/Kingfisher"
 end
 
 post_install do |installer|

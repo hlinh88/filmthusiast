@@ -8,7 +8,7 @@
 import UIKit
 import Reusable
 
-class HomeSectionHeader: UICollectionReusableView, NibReusable {
+class HomeSectionHeader: BaseHeaderCell {
     @IBOutlet weak var lbHeader: LabelRegular!
     
     override func awakeFromNib() {

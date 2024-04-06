@@ -57,6 +57,26 @@ struct Genre: ImmutableMappable {
     }
 }
 
+struct Backdrop: ImmutableMappable {
+    var filePath: String
+
+    init(map: Map) throws {
+        if let filePathEndpoint: String = try map.value("file_path") {
+            filePath = Constant.IMAGE_ORIGINAL_BASE_URL + filePathEndpoint
+        } else {
+            filePath = ""
+        }
+    }
+}
+
+struct BackdropList: ImmutableMappable {
+    var backdrops: [Backdrop]
+
+    init(map: ObjectMapper.Map) throws {
+        backdrops = try map.value("backdrops")
+    }
+}
+
 struct MovieList: ImmutableMappable {
     var results: [Movie]
     var page: Int
@@ -66,3 +86,4 @@ struct MovieList: ImmutableMappable {
         page = try map.value("page")
     }
 }
+

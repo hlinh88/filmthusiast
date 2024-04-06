@@ -8,14 +8,31 @@
 import UIKit
 
 extension UIView {
-    func dropShadow(shadowColor: CGColor, shadowOffset: CGSize) {
-        layer.masksToBounds = false
-        layer.shadowColor = shadowColor
-        layer.shadowOpacity = 1
-        layer.shadowOffset = shadowOffset
-        layer.shadowRadius = 2
+    func addGradientLayer() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+        layer.addSublayer(gradientLayer)
+    }
 
-        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+    func roundCornerWithShadow(cornerRadius: CGFloat, shadowRadius: CGFloat, offsetX: CGFloat, offsetY: CGFloat, colour: UIColor, opacity: Float) {
+
+        self.clipsToBounds = false
+
+        let layer = self.layer
+        layer.masksToBounds = false
+        layer.cornerRadius = cornerRadius
+        layer.shadowOffset = CGSize(width: offsetX, height: offsetY);
+        layer.shadowColor = colour.cgColor
+        layer.shadowRadius = shadowRadius
+        layer.shadowOpacity = opacity
+        layer.shadowPath = UIBezierPath(roundedRect: layer.bounds, cornerRadius: layer.cornerRadius).cgPath
+
+        let bColour = self.backgroundColor
+        self.backgroundColor = nil
+        layer.backgroundColor = bColour?.cgColor
+
     }
 
 }

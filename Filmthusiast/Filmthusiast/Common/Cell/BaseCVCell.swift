@@ -11,3 +11,7 @@ import Reusable
 class BaseCVCell: UICollectionViewCell, NibReusable {
 
 }
+
+class BaseHeaderCell: UICollectionReusableView, NibReusable {
+    
+}
