@@ -52,12 +52,13 @@
 		5E4FCC752BB98A3000E15B6D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */; };
 		5E5AD1C22BBDB7CA00E36460 /* HomeShowcaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E5AD1C12BBDB7CA00E36460 /* HomeShowcaseCell.xib */; };
 		5E5AD1C32BBDB7CA00E36460 /* HomeShowcaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5AD1C02BBDB7CA00E36460 /* HomeShowcaseCell.swift */; };
+		5E7C2F282BC27DC900AA0DA9 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C2F272BC27DC900AA0DA9 /* Cast.swift */; };
+		5E7C2F332BC2832A00AA0DA9 /* HomeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7C2F312BC2832A00AA0DA9 /* HomeSliderView.swift */; };
+		5E7C2F342BC2832A00AA0DA9 /* HomeSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7C2F322BC2832A00AA0DA9 /* HomeSliderView.xib */; };
 		5E86AA502BB915E8002FFEAE /* BaseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA4F2BB915E8002FFEAE /* BaseCVCell.swift */; };
 		5E86AA632BB91CAB002FFEAE /* BaseLabelFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA622BB91CAB002FFEAE /* BaseLabelFont.swift */; };
 		5E86AA662BB91E89002FFEAE /* HomeSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA642BB91E89002FFEAE /* HomeSectionHeader.swift */; };
 		5E86AA672BB91E89002FFEAE /* HomeSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */; };
-		5E86AA6E2BB9263F002FFEAE /* HomeSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */; };
-		5E86AA6F2BB9263F002FFEAE /* HomeSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */; };
 		5E91FC1C2BC1B14C00AE4CDD /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91FC1B2BC1B14C00AE4CDD /* UIColor+.swift */; };
 		5E91FC1F2BC1B62C00AE4CDD /* MovieDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E91FC1D2BC1B62C00AE4CDD /* MovieDetailHeader.swift */; };
 		5E91FC202BC1B62C00AE4CDD /* MovieDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E91FC1E2BC1B62C00AE4CDD /* MovieDetailHeader.xib */; };
@@ -118,12 +119,13 @@
 		5E4FCC742BB98A3000E15B6D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5E5AD1C02BBDB7CA00E36460 /* HomeShowcaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShowcaseCell.swift; sourceTree = "<group>"; };
 		5E5AD1C12BBDB7CA00E36460 /* HomeShowcaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeShowcaseCell.xib; sourceTree = "<group>"; };
+		5E7C2F272BC27DC900AA0DA9 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		5E7C2F312BC2832A00AA0DA9 /* HomeSliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeSliderView.swift; sourceTree = "<group>"; };
+		5E7C2F322BC2832A00AA0DA9 /* HomeSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeSliderView.xib; sourceTree = "<group>"; };
 		5E86AA4F2BB915E8002FFEAE /* BaseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCVCell.swift; sourceTree = "<group>"; };
 		5E86AA622BB91CAB002FFEAE /* BaseLabelFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabelFont.swift; sourceTree = "<group>"; };
 		5E86AA642BB91E89002FFEAE /* HomeSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionHeader.swift; sourceTree = "<group>"; };
 		5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSectionHeader.xib; sourceTree = "<group>"; };
-		5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSliderView.swift; sourceTree = "<group>"; };
-		5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeSliderView.xib; sourceTree = "<group>"; };
 		5E91FC1B2BC1B14C00AE4CDD /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		5E91FC1D2BC1B62C00AE4CDD /* MovieDetailHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailHeader.swift; sourceTree = "<group>"; };
 		5E91FC1E2BC1B62C00AE4CDD /* MovieDetailHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailHeader.xib; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				5E1F52952BB0815600D116B4 /* Movie.swift */,
+				5E7C2F272BC27DC900AA0DA9 /* Cast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,12 +308,12 @@
 		5E1F52A32BB086DF00D116B4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5E7C2F312BC2832A00AA0DA9 /* HomeSliderView.swift */,
+				5E7C2F322BC2832A00AA0DA9 /* HomeSliderView.xib */,
 				5E1F52A42BB086F800D116B4 /* HomeMovieCell.swift */,
 				5E1F52A52BB086F800D116B4 /* HomeMovieCell.xib */,
 				5E86AA642BB91E89002FFEAE /* HomeSectionHeader.swift */,
 				5E86AA652BB91E89002FFEAE /* HomeSectionHeader.xib */,
-				5E86AA6C2BB9263F002FFEAE /* HomeSliderView.swift */,
-				5E86AA6D2BB9263F002FFEAE /* HomeSliderView.xib */,
 				5E5AD1C02BBDB7CA00E36460 /* HomeShowcaseCell.swift */,
 				5E5AD1C12BBDB7CA00E36460 /* HomeShowcaseCell.xib */,
 			);
@@ -494,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7C2F342BC2832A00AA0DA9 /* HomeSliderView.xib in Resources */,
 				5E3064BE2BB965B600AA5BF9 /* MovieDetailVC.xib in Resources */,
 				5E1F52852BB07E2200D116B4 /* Assets.xcassets in Resources */,
 				5E1F52A12BB0857E00D116B4 /* kenyc.ttf in Resources */,
@@ -507,7 +511,6 @@
 				1F38E69F2BC0119B00203F95 /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				1F38E6A62BC0119B00203F95 /* Rubik-Regular.ttf in Resources */,
 				1F38E6A22BC0119B00203F95 /* Rubik-LightItalic.ttf in Resources */,
-				5E86AA6F2BB9263F002FFEAE /* HomeSliderView.xib in Resources */,
 				1F38E6A52BC0119B00203F95 /* Rubik-ExtraBold.ttf in Resources */,
 				5E3064B92BB961AA00AA5BF9 /* CheckInVC.xib in Resources */,
 				1F38E6A32BC0119B00203F95 /* Rubik-SemiBold.ttf in Resources */,
@@ -581,11 +584,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E86AA6E2BB9263F002FFEAE /* HomeSliderView.swift in Sources */,
 				5E86AA632BB91CAB002FFEAE /* BaseLabelFont.swift in Sources */,
+				5E7C2F282BC27DC900AA0DA9 /* Cast.swift in Sources */,
 				5E3064A72BB95FBA00AA5BF9 /* UIViewController+.swift in Sources */,
 				5E1F529B2BB084F000D116B4 /* HomeVC.swift in Sources */,
 				5EE19DD22BBDC0B500EAC7E0 /* UIView+.swift in Sources */,
+				5E7C2F332BC2832A00AA0DA9 /* HomeSliderView.swift in Sources */,
 				5E1F52792BB07E2100D116B4 /* AppDelegate.swift in Sources */,
 				5E1F52962BB0815600D116B4 /* Movie.swift in Sources */,
 				5E3064AE2BB9614300AA5BF9 /* SearchVC.swift in Sources */,

@@ -13,6 +13,11 @@ protocol HomeSliderViewOutput: AnyObject {
 }
 
 class HomeSliderView: BaseCVCell {
+    enum CollectionType: CaseIterable {
+        case Home
+        case Cast
+    }
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     weak var output: HomeSliderViewOutput?
