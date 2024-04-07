@@ -51,7 +51,7 @@ class HomeVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
             self?.getMovies()
         }
     }

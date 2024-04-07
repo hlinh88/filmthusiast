@@ -19,11 +19,13 @@ struct CastList: ImmutableMappable {
 }
 
 struct Cast: ImmutableMappable {
+    var id: String
     var name: String
     var profilePath: String
     var character: String
 
     init(map: Map) throws {
+        id = UUID().uuidString
         name = try map.value("name")
         if let profileEndpoint: String = try map.value("profile_path") {
             profilePath = Constant.IMAGE_BASE_URL + profileEndpoint
@@ -35,11 +37,13 @@ struct Cast: ImmutableMappable {
 }
 
 struct Crew: ImmutableMappable {
+    var id: String
     var name: String
     var profilePath: String
     var job: String?
 
     init(map: Map) throws {
+        id = UUID().uuidString
         name = try map.value("name")
         if let profileEndpoint: String = try map.value("profile_path") {
             profilePath = Constant.IMAGE_BASE_URL + profileEndpoint

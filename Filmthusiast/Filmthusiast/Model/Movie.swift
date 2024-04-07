@@ -50,9 +50,11 @@ struct Movie: ImmutableMappable {
 }
 
 struct Genre: ImmutableMappable {
+    var id: String
     var name: String
     
     init(map: Map) throws {
+        id = UUID().uuidString
         name = try map.value("name")
     }
 }
