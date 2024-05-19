@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0ka-h4-Vwp" customClass="CastSection" customModule="Filmthusiast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="546" height="533"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaR-Xp-JQ1" customClass="MovieDetailHeader" customModule="Filmthusiast" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="546" height="72"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="3Gb-hL-O0Z"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ghH-Fn-hJt"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="RaR-Xp-JQ1" secondAttribute="trailing" id="WG0-XX-Hs9"/>
+                <constraint firstItem="RaR-Xp-JQ1" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" id="taG-12-rzZ"/>
+                <constraint firstItem="RaR-Xp-JQ1" firstAttribute="top" secondItem="0ka-h4-Vwp" secondAttribute="top" id="xEU-ne-i60"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="movieDetailHeader" destination="RaR-Xp-JQ1" id="CNX-B2-GYm"/>
+            </connections>
+            <point key="canvasLocation" x="154.19847328244273" y="-119.36619718309859"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
