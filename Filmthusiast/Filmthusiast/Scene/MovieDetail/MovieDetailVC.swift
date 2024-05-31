@@ -11,6 +11,7 @@ import ImageSlideshow
 
 class MovieDetailVC: BaseVC {
     @IBOutlet weak var lbNavBar: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stvContent: UIStackView!
 
     var id: Int
