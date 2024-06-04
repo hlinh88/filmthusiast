@@ -15,6 +15,7 @@ protocol MovieContentSectionOutput: AnyObject {
 class MovieContentSection: UIView {
     enum SectionType {
         case Cast
+        case Recommendation
     }
     
     @IBOutlet weak var stvTitle: UIStackView!

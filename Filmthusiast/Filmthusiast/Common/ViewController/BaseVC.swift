@@ -14,5 +14,13 @@ import SwiftyGif
 import SkeletonView
 
 class BaseVC: UIViewController {
-
+    @objc @IBAction open func btnBackClick(_ sender: UIButton) {
+        if (self.navigationController?.viewControllers.count == 1),
+           nil != self.navigationController?.presentingViewController {
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }

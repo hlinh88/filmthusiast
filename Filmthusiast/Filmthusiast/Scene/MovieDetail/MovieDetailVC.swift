@@ -18,10 +18,11 @@ class MovieDetailVC: BaseVC {
     private var movie: Movie?
     private var genres: [Genre] = []
     private var casts: [MovieContentSectionModel] = []
+    private var recommendations: [MovieContentSectionModel] = []
 
     private var images: [KingfisherSource] = []
 
-    init(_ id: Int) {
+    init(withId id: Int) {
         self.id = id
         super.init(nibName: nil, bundle: nil)
     }
@@ -50,6 +51,7 @@ class MovieDetailVC: BaseVC {
 
         setupMovieInfoSection()
         setupCastSection()
+        setupRecommendations()
 
         SVProgressHUD.dismiss()
     }
@@ -65,11 +67,21 @@ class MovieDetailVC: BaseVC {
     private func setupCastSection() {
         let castSection: MovieContentSection = MovieContentSection.fromNib()
         castSection.configSection(sectionType: .Cast, 
-                                  headerTitle: "Casts",
+                                  headerTitle: "Top Billed Cast",
                                   contents: casts,
                                   output: self)
         
         stvContent.addArrangedSubview(castSection)
+    }
+    
+    private func setupRecommendations() {
+        let recSection: MovieContentSection = MovieContentSection.fromNib()
+        recSection.configSection(sectionType: .Recommendation,
+                                  headerTitle: "More Like This",
+                                  contents: recommendations,
+                                  output: self)
+        
+        stvContent.addArrangedSubview(recSection)
     }
 
     // MARK: Interactor
@@ -81,6 +93,7 @@ class MovieDetailVC: BaseVC {
         getMovieDetail(group)
         getMovieImages(group)
         getMovieCast(group)
+        getMovieRecommendation(group)
 
         group.notify(queue: .main) { [weak self] in
             self?.setupUI()
@@ -129,7 +142,8 @@ class MovieDetailVC: BaseVC {
             switch result {
             case .success(let castList):
                 for cast in castList.casts {
-                    self?.casts.append(.init(image: cast.profilePath,
+                    self?.casts.append(.init(id: cast.id,
+                                             image: cast.profilePath,
                                              title: cast.name,
                                              desc: cast.character))
                 }
@@ -140,11 +154,29 @@ class MovieDetailVC: BaseVC {
             }
         }
     }
+    
+    func getMovieRecommendation(_ group: DispatchGroup) {
+        group.enter()
+        let endpoint = String(format: APIEndpoint.MOVIE_DETAIL.RECOMMENDATIONS, String(id))
+        APIService.shared.callAPI(urlString: endpoint) { [weak self] (result: Result<MovieList, APIError>) in
+
+            switch result {
+            case .success(let movieList):
+                for movie in movieList.results {
+                    self?.recommendations.append(.init(id: movie.id,
+                                                       image: movie.poster,
+                                                       title: movie.title,
+                                                       desc: ""))
+                }
+                group.leave()
+
+            case .failure(let error):
+                self?.showAlert(title: "Error", message: error.localizedDescription, btnString: "OK")
+            }
+        }
+    }
 
     // MARK: Action
-    @IBAction func didTapBackBtn(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
-    }
 
 }
 
@@ -157,6 +189,10 @@ extension MovieDetailVC: MovieContentSectionOutput {
         switch type {
         case .Cast:
             print("Navigate to Cast info")
+        case .Recommendation:
+            let vc = MovieDetailVC(withId: content.id)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

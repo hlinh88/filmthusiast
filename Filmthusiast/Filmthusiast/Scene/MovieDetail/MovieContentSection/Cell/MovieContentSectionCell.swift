@@ -26,14 +26,3 @@ class MovieContentSectionCell: BaseCVCell {
     }
 }
 
-struct MovieContentSectionModel {
-    let image: String
-    let title: String
-    let desc: String
-    
-    init(image: String, title: String, desc: String) {
-        self.image = image
-        self.title = title
-        self.desc = desc
-    }
-}

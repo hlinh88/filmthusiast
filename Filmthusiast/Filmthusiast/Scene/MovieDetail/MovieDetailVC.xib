@@ -70,7 +70,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
                             <connections>
-                                <action selector="didTapBackBtn:" destination="-1" eventType="touchUpInside" id="gfD-Lx-2ao"/>
+                                <action selector="btnBackClick:" destination="-1" eventType="touchUpInside" id="Xvo-Cd-djy"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnM-Og-eyH">

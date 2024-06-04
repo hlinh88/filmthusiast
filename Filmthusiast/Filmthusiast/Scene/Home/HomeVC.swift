@@ -242,7 +242,7 @@ extension HomeVC: UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if sections[indexPath.section] == .Showcase {
             guard let showcaseMovie else { return }
-            let vc = MovieDetailVC(showcaseMovie.id)
+            let vc = MovieDetailVC(withId: showcaseMovie.id)
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -262,7 +262,7 @@ extension HomeVC: UICollectionViewDataSource,
 
 extension HomeVC: HomeSliderViewOutput {
     func goToMovieDetail(_ id: Int) {
-        let vc = MovieDetailVC(id)
+        let vc = MovieDetailVC(withId: id)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

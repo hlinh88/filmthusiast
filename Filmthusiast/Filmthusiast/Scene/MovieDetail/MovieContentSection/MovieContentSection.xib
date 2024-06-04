@@ -14,7 +14,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5z3-Lf-upC">
-                    <rect key="frame" x="16" y="88" width="530" height="250"/>
+                    <rect key="frame" x="16" y="72" width="530" height="250"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="APp-Sz-PCf"/>
@@ -27,17 +27,20 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="546" placeholderIntrinsicHeight="72" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TZL-Zo-Yhl">
-                    <rect key="frame" x="0.0" y="0.0" width="546" height="72"/>
+                    <rect key="frame" x="16" y="0.0" width="514" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="peu-JP-K11"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ghH-Fn-hJt"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5z3-Lf-upC" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" constant="16" id="4UE-n2-wx1"/>
-                <constraint firstItem="TZL-Zo-Yhl" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" id="72L-H3-fEg"/>
-                <constraint firstItem="5z3-Lf-upC" firstAttribute="top" secondItem="TZL-Zo-Yhl" secondAttribute="bottom" constant="16" id="7hk-i6-Uzg"/>
+                <constraint firstItem="TZL-Zo-Yhl" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" constant="16" id="72L-H3-fEg"/>
+                <constraint firstItem="5z3-Lf-upC" firstAttribute="top" secondItem="TZL-Zo-Yhl" secondAttribute="bottom" constant="24" id="7hk-i6-Uzg"/>
                 <constraint firstItem="TZL-Zo-Yhl" firstAttribute="top" secondItem="0ka-h4-Vwp" secondAttribute="top" id="HYe-OB-uT2"/>
-                <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="TZL-Zo-Yhl" secondAttribute="trailing" id="MS2-bh-V4J"/>
+                <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="TZL-Zo-Yhl" secondAttribute="trailing" constant="16" id="MS2-bh-V4J"/>
                 <constraint firstItem="ghH-Fn-hJt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5z3-Lf-upC" secondAttribute="bottom" constant="16" id="X82-4i-XDz"/>
                 <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="5z3-Lf-upC" secondAttribute="trailing" id="hla-QP-APM"/>
             </constraints>

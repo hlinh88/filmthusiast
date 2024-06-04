@@ -17,6 +17,7 @@ enum APIEndpoint {
         static let DETAILS = "https://api.themoviedb.org/3/movie/%@"
         static let IMAGES = "https://api.themoviedb.org/3/movie/%@/images"
         static let CASTS = "https://api.themoviedb.org/3/movie/%@/credits"
+        static let RECOMMENDATIONS = "https://api.themoviedb.org/3/movie/%@/recommendations"
     }
 }
 
