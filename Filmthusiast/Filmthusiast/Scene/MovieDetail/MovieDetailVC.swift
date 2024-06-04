@@ -17,7 +17,7 @@ class MovieDetailVC: BaseVC {
     var id: Int
     private var movie: Movie?
     private var genres: [Genre] = []
-    private var casts: [Cast] = []
+    private var casts: [MovieContentSectionModel] = []
 
     private var images: [KingfisherSource] = []
 
@@ -49,6 +49,7 @@ class MovieDetailVC: BaseVC {
         lbNavBar.text = movie?.title
 
         setupMovieInfoSection()
+        setupCastSection()
 
         SVProgressHUD.dismiss()
     }
@@ -57,7 +58,18 @@ class MovieDetailVC: BaseVC {
         guard let movie = self.movie else { return }
         let movieInfoSection: MovieInfoSection = MovieInfoSection.fromNib()
         movieInfoSection.configMovieInfoSection(movie: movie, images: images, output: self)
+        
         stvContent.addArrangedSubview(movieInfoSection)
+    }
+    
+    private func setupCastSection() {
+        let castSection: MovieContentSection = MovieContentSection.fromNib()
+        castSection.configSection(sectionType: .Cast, 
+                                  headerTitle: "Casts",
+                                  contents: casts,
+                                  output: self)
+        
+        stvContent.addArrangedSubview(castSection)
     }
 
     // MARK: Interactor
@@ -68,7 +80,7 @@ class MovieDetailVC: BaseVC {
 
         getMovieDetail(group)
         getMovieImages(group)
-//        getMovieCast(group)
+        getMovieCast(group)
 
         group.notify(queue: .main) { [weak self] in
             self?.setupUI()
@@ -117,7 +129,9 @@ class MovieDetailVC: BaseVC {
             switch result {
             case .success(let castList):
                 for cast in castList.casts {
-                    self?.casts.append(cast)
+                    self?.casts.append(.init(image: cast.profilePath,
+                                             title: cast.name,
+                                             desc: cast.character))
                 }
                 group.leave()
 
@@ -136,4 +150,13 @@ class MovieDetailVC: BaseVC {
 
 extension MovieDetailVC: MovieInfoSectionOutput {
     
+}
+
+extension MovieDetailVC: MovieContentSectionOutput {
+    func didSelectCell(type: MovieContentSection.SectionType, content: MovieContentSectionModel) {
+        switch type {
+        case .Cast:
+            print("Navigate to Cast info")
+        }
+    }
 }

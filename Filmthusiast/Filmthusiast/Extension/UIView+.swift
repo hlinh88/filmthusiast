@@ -19,6 +19,12 @@ extension UIView {
         gradientLayer.locations = [0.0, 1.0]
         layer.addSublayer(gradientLayer)
     }
+    
+    func roundTopCorners(of view: UIView, radius: CGFloat) {
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
 
     func roundCornerWithShadow(cornerRadius: CGFloat, shadowRadius: CGFloat, offsetX: CGFloat, offsetY: CGFloat, colour: UIColor, opacity: Float) {
 
@@ -37,6 +43,14 @@ extension UIView {
         self.backgroundColor = nil
         layer.backgroundColor = bColour?.cgColor
 
+    }
+    
+    func addWhiteShadow(to view: UIView) {
+        view.layer.shadowColor = UIColor.white.cgColor
+        view.layer.shadowOpacity = 0.8
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowRadius = 10
+        view.layer.masksToBounds = false
     }
 
 }

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,63 +18,53 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="MovieDetailHeader" customModule="Filmthusiast" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-            <autoresizingMask key="autoresizingMask"/>
+        <view contentMode="scaleToFill" id="GZz-7G-x3a" customClass="MovieDetailHeader" customModule="Filmthusiast" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGx-vR-1t4">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1dL-ib-Gok">
-                            <rect key="frame" x="16" y="4" width="2" height="42"/>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="2" id="spB-Yp-QP8"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="4"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGa-tj-Nkg">
-                            <rect key="frame" x="26" y="12.333333333333334" width="47" height="25.666666666666664"/>
-                            <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="22"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ztm-yu-kup">
-                            <rect key="frame" x="258" y="10" width="46" height="30"/>
-                            <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="See all"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZmS-qi-hLf">
+                    <rect key="frame" x="16" y="4" width="2" height="56"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
-                        <constraint firstItem="Ztm-yu-kup" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vGa-tj-Nkg" secondAttribute="trailing" constant="16" id="CoF-Su-cYA"/>
-                        <constraint firstItem="vGa-tj-Nkg" firstAttribute="centerY" secondItem="kGx-vR-1t4" secondAttribute="centerY" id="LaR-SJ-VZr"/>
-                        <constraint firstAttribute="bottom" secondItem="1dL-ib-Gok" secondAttribute="bottom" constant="4" id="T6y-OM-vPP"/>
-                        <constraint firstItem="1dL-ib-Gok" firstAttribute="top" secondItem="kGx-vR-1t4" secondAttribute="top" constant="4" id="ZP7-3U-o1u"/>
-                        <constraint firstItem="vGa-tj-Nkg" firstAttribute="leading" secondItem="1dL-ib-Gok" secondAttribute="trailing" constant="8" id="fed-JN-Mj7"/>
-                        <constraint firstAttribute="trailing" secondItem="Ztm-yu-kup" secondAttribute="trailing" constant="16" id="vhd-mc-pu8"/>
-                        <constraint firstItem="1dL-ib-Gok" firstAttribute="leading" secondItem="kGx-vR-1t4" secondAttribute="leading" constant="16" id="xcK-FM-EpA"/>
-                        <constraint firstItem="Ztm-yu-kup" firstAttribute="centerY" secondItem="kGx-vR-1t4" secondAttribute="centerY" id="zSp-3i-vfR"/>
+                        <constraint firstAttribute="width" constant="2" id="axM-EB-GbS"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-0B-ksj">
+                    <rect key="frame" x="26" y="19.333333333333329" width="47" height="25.666666666666671"/>
+                    <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68Q-zS-3gB">
+                    <rect key="frame" x="331" y="17" width="46" height="30"/>
+                    <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="See all"/>
+                </button>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <viewLayoutGuide key="safeArea" id="XwO-Kx-9dc"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="kGx-vR-1t4" secondAttribute="bottom" id="C4Z-5N-Oee"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="kGx-vR-1t4" secondAttribute="trailing" id="Jev-t7-upl"/>
-                <constraint firstItem="kGx-vR-1t4" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="bmI-bf-St9"/>
-                <constraint firstItem="kGx-vR-1t4" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="tTj-Ik-XEv"/>
+                <constraint firstAttribute="bottom" secondItem="ZmS-qi-hLf" secondAttribute="bottom" constant="4" id="0yb-20-BR7"/>
+                <constraint firstItem="68Q-zS-3gB" firstAttribute="centerY" secondItem="GZz-7G-x3a" secondAttribute="centerY" id="3jn-aM-Wad"/>
+                <constraint firstItem="vtf-0B-ksj" firstAttribute="leading" secondItem="ZmS-qi-hLf" secondAttribute="trailing" constant="8" id="A20-5x-H30"/>
+                <constraint firstItem="ZmS-qi-hLf" firstAttribute="top" secondItem="GZz-7G-x3a" secondAttribute="top" constant="4" id="BUa-DN-3ce"/>
+                <constraint firstItem="ZmS-qi-hLf" firstAttribute="leading" secondItem="GZz-7G-x3a" secondAttribute="leading" constant="16" id="MCY-Ym-6ju"/>
+                <constraint firstAttribute="trailing" secondItem="68Q-zS-3gB" secondAttribute="trailing" constant="16" id="aHi-Mh-lHE"/>
+                <constraint firstItem="vtf-0B-ksj" firstAttribute="centerY" secondItem="GZz-7G-x3a" secondAttribute="centerY" id="aMU-Fv-R48"/>
+                <constraint firstItem="68Q-zS-3gB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vtf-0B-ksj" secondAttribute="trailing" constant="16" id="ro6-XT-IQD"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="lbTitle" destination="vGa-tj-Nkg" id="tch-1s-k4B"/>
+                <outlet property="lbTitle" destination="vtf-0B-ksj" id="H4k-IU-QTy"/>
             </connections>
-            <point key="canvasLocation" x="4.5801526717557248" y="19.718309859154932"/>
-        </collectionReusableView>
+            <point key="canvasLocation" x="-138.1679389312977" y="-250.7042253521127"/>
+        </view>
     </objects>
     <resources>
         <systemColor name="systemYellowColor">

@@ -6,17 +6,17 @@
 //
 
 import UIKit
+import Reusable
 
-class MovieDetailHeader: BaseHeaderCell {
+class MovieDetailHeader: UIView, NibLoadable {
     @IBOutlet weak var lbTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func configHeader(with title: String) {
         lbTitle.text = title
     }
-
 }

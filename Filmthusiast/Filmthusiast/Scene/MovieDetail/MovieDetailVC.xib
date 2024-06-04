@@ -28,17 +28,14 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7yH-Ur-vng">
                     <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5la-CE-Q16">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" indicatorStyle="white" translatesAutoresizingMaskIntoConstraints="NO" id="5la-CE-Q16">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-eM-8L3">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="16"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="66"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="pFa-Es-3eg">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" priority="1" id="5sg-AT-ewn"/>
-                                            </constraints>
+                                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="50" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="pFa-Es-3eg">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
                                         </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
