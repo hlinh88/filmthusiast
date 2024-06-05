@@ -9,13 +9,20 @@ import UIKit
 
 class MovieContentSectionCell: BaseCVCell {
     @IBOutlet weak var vMain: UIView!
+    @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var ivContent: UIImageView!
     @IBOutlet weak var lbDesc: UILabel!
-    @IBOutlet weak var lbTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        ivContent.image = nil
+        lbTitle.text = nil
+        lbDesc.text = nil
     }
     
     func configCell(with model: MovieContentSectionModel) {

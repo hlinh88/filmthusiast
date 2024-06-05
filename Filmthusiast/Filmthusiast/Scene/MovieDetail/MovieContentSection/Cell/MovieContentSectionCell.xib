@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,24 +25,34 @@
                                     <constraint firstAttribute="height" constant="180" id="b5Y-kt-qTg"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o5w-67-Tud">
-                                <rect key="frame" x="8" y="188" width="170" height="18"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="o5w-67-Tud" customClass="RubikBold" customModule="Filmthusiast" customModuleProvider="target">
+                                <rect key="frame" x="8" y="196" width="170" height="15.666666666666657"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="size">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-zD-HTs">
-                                <rect key="frame" x="8" y="210" width="170" height="15.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-zD-HTs" customClass="RubikRegular" customModule="Filmthusiast" customModuleProvider="target">
+                                <rect key="frame" x="8" y="215.66666666666666" width="170" height="11.666666666666657"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="size">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="o5w-67-Tud" secondAttribute="trailing" constant="8" id="0L2-hB-5lb"/>
                             <constraint firstAttribute="trailing" secondItem="ZMH-zD-HTs" secondAttribute="trailing" constant="8" id="KCc-VU-sxP"/>
-                            <constraint firstItem="o5w-67-Tud" firstAttribute="top" secondItem="brq-hq-Hhe" secondAttribute="bottom" constant="8" id="NFN-RI-yYj"/>
+                            <constraint firstItem="o5w-67-Tud" firstAttribute="top" secondItem="brq-hq-Hhe" secondAttribute="bottom" constant="16" id="NFN-RI-yYj"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZMH-zD-HTs" secondAttribute="bottom" constant="4" id="RmR-kz-NGt"/>
                             <constraint firstItem="ZMH-zD-HTs" firstAttribute="leading" secondItem="a29-g9-5Hr" secondAttribute="leading" constant="8" id="ZQc-Hb-COZ"/>
                             <constraint firstAttribute="trailing" secondItem="brq-hq-Hhe" secondAttribute="trailing" id="dDZ-dd-ffU"/>
@@ -71,15 +80,10 @@
             <connections>
                 <outlet property="ivContent" destination="brq-hq-Hhe" id="BkU-6B-TzR"/>
                 <outlet property="lbDesc" destination="ZMH-zD-HTs" id="v0O-T8-XcS"/>
-                <outlet property="lbTitle" destination="o5w-67-Tud" id="Bjs-Zr-NNw"/>
+                <outlet property="lbTitle" destination="o5w-67-Tud" id="IgX-E1-Kcc"/>
                 <outlet property="vMain" destination="a29-g9-5Hr" id="rC7-md-Ifk"/>
             </connections>
             <point key="canvasLocation" x="230.53435114503816" y="59.859154929577471"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -4,8 +4,13 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BebasNeueRegular.ttf</string>
-		<string>BebasNeueBold.ttf</string>
+		<string>Kenyc.ttf</string>
+		<string>BebasNeue-Regular.ttf</string>
+		<string>BebasNeue-Bold.ttf</string>
+		<string>Rubik-Bold.ttf</string>
+		<string>Rubik-Regular.ttf</string>
+		<string>Rubik-SemiBold.ttf</string>
+		<string>Rubik-Medium.ttf</string>
 	</array>
 </dict>
 </plist>

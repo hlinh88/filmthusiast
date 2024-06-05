@@ -9,7 +9,7 @@ import UIKit
 import Reusable
 
 class HomeSectionHeader: BaseHeaderCell {
-    @IBOutlet weak var lbHeader: LabelRegular!
+    @IBOutlet weak var lbHeader: BebasNeueBold!
     
     override func awakeFromNib() {
         super.awakeFromNib()
