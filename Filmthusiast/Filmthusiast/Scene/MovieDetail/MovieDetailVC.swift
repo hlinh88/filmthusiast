@@ -18,6 +18,8 @@ class MovieDetailVC: BaseVC {
     private var movie: Movie?
     private var genres: [Genre] = []
     private var casts: [MovieContentSectionModel] = []
+    private var director: [String] = []
+    private var writer: [String] = []
     private var recommendations: [MovieContentSectionModel] = []
 
     private var images: [KingfisherSource] = []
@@ -70,6 +72,8 @@ class MovieDetailVC: BaseVC {
                                   headerTitle: "Top Billed Cast",
                                   contents: casts,
                                   output: self)
+        castSection.setupExtraInfo(title: "Director", descs: director)
+        castSection.setupExtraInfo(title: "Writer", descs: writer)
         
         stvContent.addArrangedSubview(castSection)
     }
@@ -146,7 +150,15 @@ class MovieDetailVC: BaseVC {
                                              image: cast.profilePath,
                                              title: cast.name,
                                              desc: cast.character))
+                    
                 }
+
+                let directorList = castList.crew.filter { $0.job == "Director" }
+                directorList.forEach { self?.director.append($0.name) }
+
+                let writerList = castList.crew.filter { $0.job == "Story" }
+                writerList.forEach { self?.writer.append($0.name) }
+                
                 group.leave()
 
             case .failure(let error):

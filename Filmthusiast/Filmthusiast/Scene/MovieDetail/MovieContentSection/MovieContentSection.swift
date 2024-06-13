@@ -18,6 +18,7 @@ class MovieContentSection: UIView {
         case Recommendation
     }
     
+    @IBOutlet weak var stvExtraInfo: UIStackView!
     @IBOutlet weak var stvTitle: UIStackView!
     @IBOutlet weak var clvContent: UICollectionView!
     
@@ -53,6 +54,14 @@ class MovieContentSection: UIView {
         clvContent.register(cellType: MovieContentSectionCell.self)
         clvContent.delegate = self
         clvContent.dataSource = self
+    }
+    
+    func setupExtraInfo(title: String, descs: [String]) {
+        if descs.isEmpty { return }
+        let movieContentExtraInfo: MovieContentExtraInfo = MovieContentExtraInfo.fromNib()
+        movieContentExtraInfo.configInfo(title: title, descs: descs)
+        
+        stvExtraInfo.addArrangedSubview(movieContentExtraInfo)
     }
 }
 

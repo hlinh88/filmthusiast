@@ -32,21 +32,28 @@
                         <constraint firstAttribute="height" constant="48" id="peu-JP-K11"/>
                     </constraints>
                 </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="514" placeholderIntrinsicHeight="179" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="de8-sV-I3P">
+                    <rect key="frame" x="16" y="338" width="514" height="179"/>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ghH-Fn-hJt"/>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="5z3-Lf-upC" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" constant="16" id="4UE-n2-wx1"/>
+                <constraint firstItem="de8-sV-I3P" firstAttribute="top" secondItem="5z3-Lf-upC" secondAttribute="bottom" constant="16" id="5ne-93-Exp"/>
                 <constraint firstItem="TZL-Zo-Yhl" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" constant="16" id="72L-H3-fEg"/>
                 <constraint firstItem="5z3-Lf-upC" firstAttribute="top" secondItem="TZL-Zo-Yhl" secondAttribute="bottom" constant="24" id="7hk-i6-Uzg"/>
+                <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="de8-sV-I3P" secondAttribute="trailing" constant="16" id="8iI-yD-4G0"/>
                 <constraint firstItem="TZL-Zo-Yhl" firstAttribute="top" secondItem="0ka-h4-Vwp" secondAttribute="top" id="HYe-OB-uT2"/>
                 <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="TZL-Zo-Yhl" secondAttribute="trailing" constant="16" id="MS2-bh-V4J"/>
-                <constraint firstItem="ghH-Fn-hJt" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5z3-Lf-upC" secondAttribute="bottom" constant="16" id="X82-4i-XDz"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="de8-sV-I3P" secondAttribute="bottom" constant="16" id="OSy-fg-5wm"/>
+                <constraint firstItem="de8-sV-I3P" firstAttribute="leading" secondItem="ghH-Fn-hJt" secondAttribute="leading" constant="16" id="dzh-1t-7if"/>
                 <constraint firstItem="ghH-Fn-hJt" firstAttribute="trailing" secondItem="5z3-Lf-upC" secondAttribute="trailing" id="hla-QP-APM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="clvContent" destination="5z3-Lf-upC" id="t9m-y1-XAM"/>
+                <outlet property="stvExtraInfo" destination="de8-sV-I3P" id="evA-S7-Q2H"/>
                 <outlet property="stvTitle" destination="TZL-Zo-Yhl" id="k0g-Z9-8iX"/>
             </connections>
             <point key="canvasLocation" x="154.19847328244273" y="-119.36619718309859"/>

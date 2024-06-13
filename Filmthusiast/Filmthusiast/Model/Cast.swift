@@ -37,24 +37,20 @@ struct Cast: ImmutableMappable {
 }
 
 struct Crew: ImmutableMappable {
-    var id: String
+    var id: Int
     var name: String
     var profilePath: String
     var job: String?
 
     init(map: Map) throws {
-        id = UUID().uuidString
+        id = try map.value("id")
         name = try map.value("name")
         if let profileEndpoint: String = try map.value("profile_path") {
             profilePath = Constant.IMAGE_BASE_URL + profileEndpoint
         } else {
             profilePath = ""
         }
-        if let jobTitle: String = try map.value("job") {
-            if jobTitle == "Writer" || jobTitle == "Director" {
-                job = jobTitle
-            }
-        }
+        job = try? map.value("job")
     }
 }
 
